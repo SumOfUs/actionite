@@ -13,7 +13,7 @@ SumOfUs Experiment with ActionKit in ruby.
 * `docker-compose up` This will start the application running in the docker container.
 * If you are on Linux, you can check that the application is running by visiting `http://localhost:5000`.
 * If you are on OS X, you will need to retrieve the IP of your Docker vm by running `boot2docker ip`
-  on the command line. (On most machines, this seems to be `192.168.59.3`).
-* On OS X, visit `http://192.168.59.3:5000` (or the equivalent result of `boot2docker ip`) in your
+  on the command line. (On most machines, this seems to be `192.168.59.103`).
+* On OS X, visit `http://192.168.59.103:5000` (or the equivalent result of `boot2docker ip`) in your
   browser to see the application running.
 
