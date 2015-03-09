@@ -11,7 +11,7 @@ class Campaigners < Cuba
     end
 
     on root do
-      render("home", title: "SumOfUs")
+      run Guests
     end
 
     on "logout" do
