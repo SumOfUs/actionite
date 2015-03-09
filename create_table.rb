@@ -7,4 +7,5 @@ DB.create_table :campaigners do
   primary_key :id
   String :google_id
   String :email
+  String :image
 end
