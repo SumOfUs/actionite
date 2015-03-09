@@ -1,4 +1,6 @@
 class Guests < Cuba
+  settings[:mote][:layout] = "layout.guests"
+
   define do
     # Homepage for campaigners (when going to http://192.168.59.103:5000/actionite)
     on "actionite" do

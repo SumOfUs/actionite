@@ -1,4 +1,6 @@
 class Campaigners < Cuba
+  settings[:mote][:layout] = "layout.campaigners"
+
   define do
     on "dashboard" do
       render("campaigner/dashboard", title: "Actionite | Dashboard")
