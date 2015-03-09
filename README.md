@@ -20,9 +20,11 @@ SumOfUs Experiment with ActionKit in ruby.
 ## Installation without Docker
 
 * Install Postgres database (OS X):
+
 `$ brew install postgresql`
 
 * Start postgres (Ctrl+C to quit):
+
 `$ postgres -D /usr/local/var/postgres`
 
 * Create database 'actionite_db':
@@ -39,20 +41,25 @@ SumOfUs Experiment with ActionKit in ruby.
 - db_name (we know that! -> 'actionite_db')
 
 * You can run this to find out info about your db engine:
+
 `$ psql --help`
 
 Now, inside the project's folder:
 
 * (This will install gemset and dep gems, and start a shell)
+
 `$ make gems`
 
 * (This will install the project's gems -named in .gems file-)
+
 `$ make install`
 
 * (This will create the table 'campaigners' in the 'actionite_db' db)
+
 `$ make db`
 
 * (This will start the server)
+
 `$ make server`
 
 Done!
