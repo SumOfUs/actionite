@@ -1,24 +1,38 @@
-require "sequel"
 
-POSTGRES_DB = ENV.fetch("POSTGRES_DB")
-DB = Sequel.connect(POSTGRES_DB)
+def campaigners_table(db)
+  begin
+    # Some DBs return false, others raise an exception, this handles both cases.
+    if not db.table_exists? :campaigners
+      create_campaigners_table db
+    end
+  rescue
+    create_campaigners_table db
+  end
+end
 
-begin
-  DB.table_exists? :campaigners
-rescue
+def petitions_table(db)
+  begin
+    # Some DBs return false, others raise an exception, this handles both cases.
+    if not db.table_exists? :petitions
+      create_petitions_table db
+    end
+  rescue
+    create_petitions_table db
+  end
+end
+
+def create_campaigners_table(db)
   # Create the table
-  DB.create_table :campaigners do
+  db.create_table :campaigners do
     primary_key :id
     String :google_id
     String :email
   end
 end
 
-begin
-  DB.table_exists? :petitions
-rescue
+def create_petitions_table(db)
   # Create the table
-  DB.create_table :petitions do
+  db.create_table :petitions do
     primary_key :id
     # Unique identifiers
     String :name, null: false
