@@ -19,8 +19,6 @@ SumOfUs Experiment with ActionKit in ruby.
 
 ## Installation without Docker
 
-README (without Docker)
-
 * Install Postgres database (OS X):
 `$ brew install postgresql`
 
