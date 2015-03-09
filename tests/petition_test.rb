@@ -2,9 +2,11 @@ require_relative '../db/define_tables'
 require 'sequel'
 
 setup do
+  # Need to set up our in-memory DB before we initialize the model.
   db = Sequel.sqlite # In-memory SQLite DB
   petitions_table db
 
+  # Now we can initialize the model.
   require_relative '../models/petition'
   Petition.new name: 'Test Petition Object',
                   title: 'Test Petition Title',
@@ -14,11 +16,6 @@ setup do
                   facebook_title: 'Test Facebook Title',
                   language: '/rest/v1/language/100/'
 end
-
-# teardown do
-#   petition = Petition.find_by_slug '/test_petition_slug'
-#   petition.delete
-# end
 
 test 'should not have any required fields by default' do |petition|
   assert petition.required_fields == nil
