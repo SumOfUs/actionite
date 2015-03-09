@@ -9,3 +9,7 @@ gem 'scrivener'
 gem 'sequel'
 gem 'shield'
 gem 'shotgun'
+
+# For Testing
+gem 'cutest'
+gem 'sqlite3'
