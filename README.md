@@ -64,8 +64,6 @@ Now, inside the project's folder:
 
 Done!
 
-Members homepage
-http://localhost:9393
+Members homepage: `http://localhost:9393`
 
-Actionite homepage
-http://localhost:9393/actionite
+Actionite homepage: `http://localhost:9393/actionite`
