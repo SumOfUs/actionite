@@ -17,3 +17,5 @@ console:
 db:
 	env $$(cat .env) ruby ./db/create_table.rb
 
+test:
+    cutest ./tests/*.rb
