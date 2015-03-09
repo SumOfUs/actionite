@@ -41,20 +41,25 @@ SumOfUs Experiment with ActionKit in ruby.
 - db_name (we know that! -> 'actionite_db')
 
 5) You can run this to find out info about your db engine:
+
 `$ psql --help`
 
 Now, inside the project's folder:
 
 1) (This will install gemset and dep gems, and start a shell)
+
 `$ make gems`
 
 2) (This will install the project's gems -named in .gems file-)
+
 `$ make install`
 
 3 (This will create the table 'campaigners' in the 'actionite_db' db)
+
 `$ make db`
 
 4) (This will start the server)
+
 `$ make server`
 
 Done!
