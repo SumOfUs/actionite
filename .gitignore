@@ -38,3 +38,9 @@ build/
 *.iml
 
 Gemfile.lock
+
+# Security
+.env
+
+# Gems installed with gemset
+.gs
