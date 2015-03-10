@@ -1,16 +1,26 @@
-<h1>Welcome to Actionite!</h1>
-
-<span id="signinButton">
-  <span
-    class="g-signin"
-    data-callback="signinCallback"
-    data-clientid="{{ CLIENT_ID }}"
-    data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="http://schema.org/AddAction"
-    data-scope="https://www.googleapis.com/auth/plus.profile.emails.read">
-  </span>
-</span>
-
+<div class="jumbotron welcome">
+  <div class="container welcome-banner">
+    <div class="row">
+      <div class="col-xs-3">
+        <img src="http://googlequitthechamber.org/img/sou.png"/>
+      </div>
+      <div class="col-xs-9">
+        <h1>Welcome to Actionite!</h1>
+        <p>
+          Please log in below using your <strong>SumOfUs</strong> e-mail account.
+        </p>
+        <span id="signinButton">
+     			<span
+    			  class="g-signin"
+    			  data-callback="signinCallback"
+    			  data-clientid="{{ CLIENT_ID }}"
+    			  data-cookiepolicy="single_host_origin"
+    			  data-requestvisibleactions="http://schema.org/AddAction"
+    			  data-scope="https://www.googleapis.com/auth/plus.profile.emails.read">
+      		</span>
+    		</span>
+      </div>
+    </div>
+  </div>
+</div>
 <script src="/js/signin_callback.js"></script>
-
-<p>This is the homepage for campaigners</p>
