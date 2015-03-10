@@ -28,14 +28,14 @@ end
 
 test 'adding a list of required fields should end up with multiple' do |petition|
   petition.add_required_fields [:member_name, :email_address]
-  assert petition.required_fields = 'member_name|email_address'
+  assert petition.required_fields == 'member_name|email_address'
 end
 
 test 'adding a duplicate required field does nothing' do |petition|
   petition.add_required_fields [:member_name, :email_address]
-  assert petition.required_fields = 'member_name|email_address'
+  assert petition.required_fields == 'member_name|email_address'
   petition.add_required_fields :email_address
-  assert petition.required_fields = 'member_name|email_address'
+  assert petition.required_fields == 'member_name|email_address'
 end
 
 test 'adding an invalid required field throws an error' do |petition|
@@ -46,7 +46,17 @@ end
 
 test 'adding a valid field after other fields ends up with correct number' do |petition|
   petition.add_required_fields [:member_name, :email_address]
-  assert petition.required_fields = 'member_name|email_address'
+  assert petition.required_fields == 'member_name|email_address'
   petition.add_required_fields :city
-  assert petition.required_fields = 'member_name|email_address|city'
+  assert petition.required_fields == 'member_name|email_address|city'
 end
+
+test 'resetting required fields resets the list' do |petition|
+  petition.add_required_fields [:member_name, :email_address]
+  assert petition.required_fields == 'member_name|email_address'
+  petition.reset_required_fields
+  assert petition.required_fields == nil
+  petition.add_required_fields [:member_name, :email_address]
+  assert petition.required_fields == 'member_name|email_address'
+end
+

@@ -37,10 +37,15 @@ class Petition < Sequel::Model(:petitions)
     self.where(slug: slug).first
   end
 
+  # To be used when new required fields are sent, prior to adding them again.
+  def reset_required_fields
+    self.required_fields = nil
+  end
+
   protected
   def add_required_field(field)
     if self.required_field_options.include? field
-      if not self.required_fields_list.include? field
+      if not self.required_fields_list.include? field.to_s
         if self.required_fields_list.empty?
           self.required_fields = "#{field}"
         else
@@ -48,7 +53,7 @@ class Petition < Sequel::Model(:petitions)
         end
       end
     else
-      raise ArgumentError("#{field} is not an acceptable value.")
+      raise StandardError "#{field} is not an acceptable value."
     end
   end
 end
