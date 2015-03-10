@@ -63,12 +63,12 @@ class Guests < Cuba
     end
 
     # Petition page
-    on "petition/:id" do |id|
+    on "petition/:slug" do |slug|
       render("guests/petition", title: "SumOfUs")
     end
 
     # Donation page
-    on "donation/:id" do |id|
+    on "donation/:slug" do |slug|
       render("guests/donation", title: "SumOfUs")
     end
 
