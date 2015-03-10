@@ -8,13 +8,7 @@ setup do
 
   # Now we can initialize the model.
   require_relative '../models/petition'
-  Petition.new name: 'Test Petition Object',
-                  title: 'Test Petition Title',
-                  slug: '/test_petition_slug',
-                  body: 'Test Petition Body',
-                  mobile_body: 'Test Mobile Petition Body',
-                  facebook_title: 'Test Facebook Title',
-                  language: '/rest/v1/language/100/'
+  Petition.new 
 end
 
 test 'should not have any required fields by default' do |petition|

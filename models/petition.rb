@@ -1,12 +1,4 @@
 class Petition < Sequel::Model(:petitions)
-  plugin :validation_helpers
-
-  def validate
-    super
-    validates_presence [:name, :slug, :title, :body, :mobile_body, :facebook_title]
-    validates_unique :name
-    validates_unique :slug
-  end
 
   def required_field_options
     [:member_name, :email_address, :city, :country, :state, :zip]
