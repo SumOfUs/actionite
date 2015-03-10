@@ -9,11 +9,9 @@
   </head>
   <body>
     <section>
-
-      <p>This is the layout for campaigners</p>
-
-      {{ content }}
-
+        <div class="container">
+            {{ content }}
+        </div>
     </section>
   </body>
 </html>

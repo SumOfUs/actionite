@@ -45,9 +45,9 @@ def create_petitions_table(db)
     Text :mobile_body, null: false
     String :title, null: false
     String :facebook_title, null: false
+    String :language, default: '/rest/v1/language/100/'
 
     # The other details
-    String :language, default: '/rest/v1/language/100/'
     Text :alt_body
     String :image_url
     String :image_text

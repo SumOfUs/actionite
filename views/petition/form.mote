@@ -1,15 +1,112 @@
-<form action="petitions/save" method="post">
+<form action="petitions/save" method="post" class="form-horizontal">
+    <fieldset>
+        <legend><h3>Required Fields</h3></legend>
+        <div class="form-group">
+            <label for="name" class="col-lg-3 control-label">Name:</label>
+            <div class="col-lg-9">
+                <input type="text" name="name" placeholder="Enter Petition Name" class="form-control" value="{{petition.name}}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="title" class="col-lg-3 control-label">Title:</label>
+            <div class="col-lg-9">
+                <input type="text" name="title" placeholder="Enter Petition Title" class="form-control" value="{{petition.title}}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="slug" class="col-lg-3 control-label">Page Location Name:</label>
+            <div class="col-lg-9">
+                <input type="text" name="slug" placeholder="Example: great_petition_name" class="form-control" value="{{petition.slug}}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="facebook_title" class="col-lg-3 control-label">Facebook Title:</label>
+            <div class="col-lg-9">
+                <input type="text" name="facebook_title" placeholder="Enter Facebook Title" class="form-control" value="{{petition.facebook_title}}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="language" class="col-lg-3 control-label">Language:</label>
+            <div class="col-lg-9">
+                <select name="language" class="form-control">
+                    % petition.language_options.each_pair do |option, value|
+                        % if value == petition.language
+                            <option value="{{value}}" selected="selected">{{option.to_s.capitalize}}</option>
+                        % else
+                            <option value="{{value}}">{{option.to_s.capitalize}}</option>
+                        % end
+                    % end
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="body" class="col-lg-3 control-label">Page Body:</label>
+            <div class="col-lg-9">
+                <textarea name="body" rows="10" placeholder="Enter the page's text here." class="form-control">{{petition.body}}</textarea>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mobile_body" class="col-lg-3 control-label">Mobile Body:</label>
+            <div class="col-lg-9">
+                <textarea name="mobile_body" rows="10" placeholder="Enter the mobile page's text here." class="form-control">{{petition.mobile_body}}</textarea>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend><h3>Member Form Fields to Include</h3></legend>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Fields:</label>
+            <div class="col-lg-9">
+                <div class="checkbox">
+                    % petition.required_field_options.each do |option|
+                        % if petition.field_required? option
+                            <label><input type="checkbox" name="{{option}}" checked/> {{option.to_s.sub('_', ' ').capitalize}}</label>
+                        % else
+                            <label><input type="checkbox" name="{{option}}"/> {{option.to_s.sub('_', ' ').capitalize}}</label>
+                        % end
+                        <br/>
+                    % end
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend><h3>Optional Items</h3></legend>
+        <div class="form-group">
+            <label for="image_url" class="col-lg-3 control-label">Image URL:</label>
+            <div class="col-lg-9">
+                <input type="text" name="image_url" placeholder="Image URL (in lieu of upload for now)" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="image_text" class="col-lg-3 control-label">Image Text:</label>
+            <div class="col-lg-9">
+                <input type="text" name="image_text" placeholder="The text to display over the image" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="suggested_tweets" class="col-lg-3 control-label">Suggested Tweet:</label>
+            <div class="col-lg-9">
+                <input type="text" name="suggested_tweets" placeholder="How should people share this on twitter?" class="form-control" value="{{petition.suggested_tweets}}"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="goal" class="col-lg-3 control-label">Signature Goal:</label>
+            <div class="col-lg-9">
+                <input type="number" name="goal" placeholder="The number of signatures we're aiming for" class="form-control" value="{{petition.goal}}"/>
+                <div class="checkbox">
+                    % if petition.auto_increment_goal
+                        <label><input type="checkbox" name="auto_increment_goal" checked/> Auto Increment Goal</label>
+                    % else
+                        <label><input type="checkbox" name="auto_increment_goal" /> Auto Increment Goal</label>
+                    % end
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
     <div class="form-group">
-        <label for="name">Name:</label>
-        <input type="text" name="name" placeholder="Enter Petition Name"/>
+        <input type="submit" value="Create Petition" class="btn btn-primary col-lg-offset-1"/>
     </div>
-    <div class="form-group">
-        <label for="title">Title:</label>
-        <input type="text" name="title" placeholder="Enter Petition Title"/>
-    </div>
-    <div class="form-group">
-        <label for="slug">Page Slug:</label>
-        <input type="text" name="slug" placeholder="Example: 'great_petition_name'"/>
-    </div>
-    <input type="submit" value="Create Petition" />
 </form>
+

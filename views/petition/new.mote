@@ -1,3 +1,4 @@
-<h1>Create new Petition</h1>
+<div class="col-lg-8">
+    {{ form }}
+</div>
 
-{{ form }}
