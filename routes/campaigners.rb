@@ -1,4 +1,5 @@
 class Campaigners < Cuba
+  # We set the 'campaigners' layout as master template (file: /views/layout.campaigners.mote)
   settings[:mote][:layout] = "layout.campaigners"
 
   define do
@@ -11,7 +12,7 @@ class Campaigners < Cuba
     end
 
     on root do
-      run Guests
+      res.redirect "/"
     end
 
     on "logout" do

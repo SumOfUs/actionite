@@ -1,3 +1,64 @@
-<h1>Welcome to SumOfUs!</h1>
+<div class="jumbotron welcome">
+  <div class="container welcome-banner">
+    <div class="row">
+        <div class="col-xs-3">
+            <img src="http://googlequitthechamber.org/img/sou.png"/>
+        </div>
+        <div class="col-xs-9">
+          <h1>Welcome to SumOfUs!</h1>
+          <p>
+            This is the home page for members.<br>
+            Styling and content still under construction. :}
+          </p>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-l-3 col-md-6 campaign-box">
+            <div class="row col-md-8">
+                <img src="http://sumofus.org/wp-content/uploads/2015/03/tar-sands-image.jpg" class="img-responsive">
+                <a href="/petition/alberta-government" class="btn btn-default btn-lg btn-block">Take action!</a>
+            </div>
+            <div class="row col-md-4 campaign-abstract">
+                <h4>The Alberta government’s water rules read like an industry wish list.</h4>
+                <p>The Alberta government is days away from releasing reckless new water rules that hand oil companies the right to take as... more</p>
+            </div>
+        </div>
 
-<p>This is the homepage for members</p>
+        <div class="col-l-3 col-md-6">
+            <div class="row col-md-8">
+                <img src="https://sumofus-production-media.s3.amazonaws.com/a/img/8bb36f34-ee8c-4c61-b21b-ae46021686d5.png" class="img-responsive">
+                <a href="/petition/fast-track-tpp" class="btn btn-default btn-lg btn-block">Take action!</a>
+            </div>
+            <div class="row col-md-4 campaign-abstract">
+                <h4>A small but growing number in Congress could stall or stop Fast Track and the TPP.</h4>
+                <p>U.S. lawmakers are days away from introducing dangerous new legislation to ram a massive trade pact through without democratic oversight.</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-l-3 col-md-6 campaign-box">
+            <div class="row col-md-8">
+                <img src="https://sumofus-production-media.s3.amazonaws.com/a/img/89554179-47cc-42aa-aa88-114886b85175.jpg" class="img-responsive">
+                <a href="/petition/great-barrier-reef" class="btn btn-default btn-lg btn-block">Take action!</a>
+            </div>
+            <div class="row col-md-4 campaign-abstract">
+                <h4>What kind of government would lobby banks to destroy our Great Barrier Reef?</h4>
+                <p>Big international banks have publicly backed out of funding the destruction of the Great Barrier Reef, but now our government is... more</p>
+            </div>
+        </div>
+
+        <div class="col-l-3 col-md-6">
+            <div class="row col-md-8">
+                <img src="https://sumofus-production-media.s3.amazonaws.com/a/img/494c7093-bfd3-4886-97e0-777b617d2ebc.jpg" class="img-responsive">
+                <a href="/petition/nestle-water" class="btn btn-default btn-lg btn-block">Take action!</a>
+            </div>
+            <div class="row col-md-4 campaign-abstract">
+                <h4>Nestlé is about to buy Canada’s precious water for pennies.</h4>
+                <p>British Columbia, a Canadian province, will finally start charging companies like Nestlé for taking its groundwater and bottling it to sell... more</p>
+            </div>
+        </div>
+    </div>
+</div>

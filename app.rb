@@ -46,6 +46,34 @@ Cuba.use Rack::Static,
 Cuba.define do
   persist_session!
 
+  # We set the 'guests' layout as master template (file: /views/layout.guests.mote)
+  settings[:mote][:layout] = "layout.guests"
+
+  # Petition page
+  on "petition/:slug" do |slug|
+    render("guests/petition", title: "SumOfUs")
+  end
+
+  # Donation page
+  on "donation/:slug" do |slug|
+    render("guests/donation", title: "SumOfUs")
+  end
+
+  # Donate page (for a general donation not related to any specific campaign)
+  on "donate" do
+    render("guests/donate", title: "SumOfUs")
+  end
+
+  # Campaigns page
+  on "campaigns" do
+    render("guests/campaigns", title: "SumOfUs")
+  end
+
+  # Homepage for members (guests) when going to http://192.168.59.103:5000
+  on root do
+    render("home", title: "SumOfUs")
+  end
+
   on authenticated(Campaigner) do
     run Campaigners
   end

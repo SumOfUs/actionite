@@ -1,4 +1,5 @@
 class Guests < Cuba
+  # We set the 'guests' layout as master template (file: /views/layout.guests.mote)
   settings[:mote][:layout] = "layout.guests"
 
   define do
@@ -60,11 +61,6 @@ class Guests < Cuba
       on google_user.nil? do
         res.redirect "/actionite"
       end
-    end
-
-    # Homepage for members (when going to http://192.168.59.103:5000)
-    on root do
-      render("home", title: "SumOfUs")
     end
 
     # Here we use the not_found! method provided from UsersHelpers (inside 'helpers' folder)

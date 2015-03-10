@@ -67,3 +67,7 @@ Done!
 Members homepage: `http://localhost:9393`
 
 Actionite homepage: `http://localhost:9393/actionite`
+
+Note: Something important to remember, everytime a new tab or window is
+opened in Terminal, once in the project's folder, we need to run `gemset` command
+to make all the project's gems available.
