@@ -15,4 +15,7 @@ console:
 	env $$(cat .env) irb -r ./app
 
 db:
-	env $$(cat .env) ruby create_table.rb
+	env $$(cat .env) ruby ./db/create_table.rb
+
+test:
+	cutest ./tests/*.rb

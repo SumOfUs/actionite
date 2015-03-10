@@ -10,3 +10,8 @@ gem 'sequel'
 gem 'shield'
 gem 'shotgun'
 gem 'actionkit_connector'
+
+# For Testing
+gem 'cutest'
+gem 'sqlite3'
+
