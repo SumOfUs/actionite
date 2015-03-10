@@ -20,12 +20,20 @@ class Campaigners < Cuba
     end
 
     on "petitions/new" do
-      render "petition/new", title: "Actionite | Create New Petition", petition: Petition.new, form: partial('petition/form')
+      render("petition/new",
+             title: "Actionite | Create New Petition",
+             form: partial('petition/form', petition: Petition.new))
+    end
+
+    on "petitions/save" do
+      p params
     end
 
     on "petitions/edit/:slug" do |slug|
       petition = Petition.find_by_slug slug
-      render "petition/edit", title: "Actionite | Create New Petition", petition: petition
+      render("petition/edit",
+             title: "Actionite | Create New Petition",
+             form: partial('petition/form', petition: petition))
     end
 
     on "petitions" do

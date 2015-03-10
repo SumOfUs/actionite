@@ -1,1 +1,15 @@
-This is in the form partial.
+<form action="petitions/save" method="post">
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Enter Petition Name"/>
+    </div>
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Enter Petition Title"/>
+    </div>
+    <div class="form-group">
+        <label for="slug">Page Slug:</label>
+        <input type="text" name="slug" placeholder="Example: 'great_petition_name'"/>
+    </div>
+    <input type="submit" value="Create Petition" />
+</form>
