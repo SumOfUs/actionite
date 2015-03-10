@@ -8,7 +8,7 @@ setup do
 
   # Now we can initialize the model.
   require_relative '../models/petition'
-  Petition.new 
+  Petition.new
 end
 
 test 'should not have any required fields by default' do |petition|
