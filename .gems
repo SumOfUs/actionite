@@ -7,3 +7,5 @@ scrivener -v 0.4.0
 sequel -v 4.20.0
 shield -v 2.1.1
 shotgun -v 0.9.1
+cutest -v 1.2.2
+sqlite3 -v 1.3.10
