@@ -1,5 +1,3 @@
-require 'sequel'
-
 class Petition < Sequel::Model(:petitions)
   plugin :validation_helpers
 
