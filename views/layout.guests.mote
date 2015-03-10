@@ -7,6 +7,7 @@
   </head>
   <body>
     <section>
+      <p>This is the layout for members</p>
 
       {{ content }}
 

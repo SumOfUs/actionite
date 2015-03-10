@@ -1,4 +1,6 @@
 class Campaigners < Cuba
+  settings[:mote][:layout] = "layout.campaigners"
+
   define do
     on "dashboard" do
       render("campaigner/dashboard", title: "Actionite | Dashboard")
@@ -9,7 +11,7 @@ class Campaigners < Cuba
     end
 
     on root do
-      render("home", title: "SumOfUs")
+      run Guests
     end
 
     on "logout" do

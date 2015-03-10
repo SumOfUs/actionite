@@ -1,4 +1,6 @@
 class Guests < Cuba
+  settings[:mote][:layout] = "layout.guests"
+
   define do
     # Homepage for campaigners (when going to http://192.168.59.103:5000/actionite)
     on "actionite" do
@@ -36,8 +38,10 @@ class Guests < Cuba
           if campaigner.nil?
             google_id = google_user['id']
             email = google_user['emails'][0]['value']
+            image = google_user['image']['url']
 
-            campaigner = Campaigner.create(google_id: google_id, email: email)
+            campaigner = Campaigner.create(google_id: google_id,
+                email: email, image: image)
           end
 
           # Authenticates the campaigner, from this moment, inside the session
