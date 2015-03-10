@@ -20,7 +20,14 @@ class Petition < Sequel::Model(:petitions)
     else
       self.required_fields.split '|'
     end
+  end
 
+  def field_required?(symbol)
+    if self.required_field_options.include? symbol
+      self.required_fields_list.include? symbol.to_s
+    else
+      raise StandardError "#{symbol} is not an acceptable value."
+    end
   end
 
   def self.find_by_slug(slug)

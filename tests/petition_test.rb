@@ -54,3 +54,11 @@ test 'resetting required fields resets the list' do |petition|
   assert petition.required_fields == 'member_name|email_address'
 end
 
+test 'adding a required field should flag it as required' do |petition|
+  petition.add_required_fields [:member_name, :email_address]
+  assert petition.required_fields == 'member_name|email_address'
+  assert petition.field_required? :member_name
+  assert petition.field_required? :email_address
+  assert !petition.field_required?(:city)
+end
+
