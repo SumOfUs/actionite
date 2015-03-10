@@ -12,7 +12,7 @@ class Campaigners < Cuba
     end
 
     on root do
-      run Guests
+      res.redirect "/"
     end
 
     on "logout" do
