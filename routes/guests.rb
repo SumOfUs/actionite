@@ -62,6 +62,26 @@ class Guests < Cuba
       end
     end
 
+    # Petition page
+    on "petition/:id" do |id|
+      render("guests/petition", title: "SumOfUs")
+    end
+
+    # Donation page
+    on "donation/:id" do |id|
+      render("guests/donation", title: "SumOfUs")
+    end
+
+    # Donate page (for a general donation not related to any specific campaign)
+    on "donate" do
+      render("guests/donate", title: "SumOfUs")
+    end
+
+    # Campaigns page
+    on "campaigns" do
+      render("guests/campaigns", title: "SumOfUs")
+    end
+
     # Homepage for members (when going to http://192.168.59.103:5000)
     on root do
       render("home", title: "SumOfUs")
