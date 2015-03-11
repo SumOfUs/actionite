@@ -10,7 +10,7 @@
   </head>
   <body>
     <section>
-      <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -21,7 +21,6 @@
           <a class="navbar-brand" href="/">Home</a>
           <ul class="nav navbar-nav">
             <li><a href="#">About</a></li>
-            <li><a href="/campaigns">Campaigns</a></li>
             <li><a href="#">Press</a></li>
             <li><a href="/donate">Donate</a></li>
           </ul>
