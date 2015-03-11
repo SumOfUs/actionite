@@ -55,6 +55,7 @@ class Campaigners < Cuba
         petition.add_required_fields params['required_fields'].keys
         petition.save
 
+        # TODO: This isn't saving the language for reasons unknown, need to fix.
         res.write(ak_connector.create_petition_page(
             name=petition.slug,
             title=petition.title,
