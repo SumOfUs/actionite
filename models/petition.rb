@@ -4,6 +4,14 @@ class Petition < Sequel::Model(:petitions)
     [:member_name, :email_address, :city, :country, :state, :zip]
   end
 
+  def language_options
+    {
+        english: '/rest/v1/language/100/',
+        french: '/rest/v1/language/103/',
+        german: '/rest/v1/language/104/'
+    }
+  end
+
   def add_required_fields(fields)
     if fields.respond_to? :each
       fields.each do |field|
@@ -41,7 +49,7 @@ class Petition < Sequel::Model(:petitions)
 
   protected
   def add_required_field(field)
-    if self.required_field_options.include? field
+    if self.required_field_options.include? field.to_sym
       if not self.required_fields_list.include? field.to_s
         if self.required_fields_list.empty?
           self.required_fields = "#{field}"

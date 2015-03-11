@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>{{ title }}</title>
+    <title>Actionite | {{ title }}</title>
     <script src="https://apis.google.com/js/client:platform.js" async defer></script>
     <!-- <link href="/css/bootstrap-theme.css" rel="stylesheet" media="screen"> -->
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
@@ -22,14 +22,16 @@
           <ul class="nav navbar-nav">
             <li><a href="/dashboard">Dashboard</a></li>
             <li><a href="/donation">New donation page</a></li>
-            <li><a href="/petition">New petition page</a></li>
+            <li><a href="/petitions/new">New petition page</a></li>
             <li><a href="/logout">Log out</a></li>
           </ul>
         </div>
       </nav>
-
-      {{ content }}
-
+        <!--So our floating navbar doesn't cut off the top of the content.-->
+        <div class="navbar-spacer">&nbsp;</div>
+        <div class="container">
+            {{ content }}
+        </div>
     </section>
   </body>
 </html>
