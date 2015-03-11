@@ -74,6 +74,18 @@ class Campaigners < Cuba
       end
     end
 
+    on "petitions/disable/:slug" do |slug|
+      petition = Petition.find_by_slug slug
+      if petition
+        petition.disabled = !petition.disabled
+        petition.save
+      else
+        not_found!
+      end
+
+      res.redirect "/petitions/edit/#{slug}"
+    end
+
     on "petitions/edit/:slug" do |slug|
       petition = Petition.find_by_slug slug
       render("petition/edit",

@@ -112,7 +112,12 @@
     </fieldset>
 
     <div class="form-group">
-        <input type="submit" value="Create Petition" class="btn btn-primary col-lg-offset-1"/>
+        <input type="submit" value="Create Petition" class="btn btn-info col-lg-offset-1"/>
+        % if petition.disabled
+            <a href="/petitions/disable/{{petition.slug}}" class="btn btn-danger pull-right">Disable Petition</a>
+        % else
+            <a href="/petitions/disable/{{petition.slug}}" class="btn btn-success pull-right">Enable Petition</a>
+        % end
     </div>
 </form>
 
