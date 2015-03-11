@@ -1,16 +1,16 @@
 <fieldset>
     <legend><h3>Donation Values</h3></legend>
     <div class="form-group">
-        <label class="col-lg-3 control-label">Fields:</label>
+        <label class="col-lg-3 control-label">Donation Values to Present:</label>
         <div class="col-lg-9">
             <div class="checkbox">
-                % petition.required_field_options.each do |option|
-                % if petition.field_required? option
-                <label><input type="checkbox" name="required_fields[{{option}}]" checked/> {{option.to_s.sub('_', ' ').capitalize}}</label>
-                % else
-                <label><input type="checkbox" name="required_fields[{{option}}]"/> {{option.to_s.sub('_', ' ').capitalize}}</label>
-                % end
-                <br/>
+                % donation.suggested_donation_amounts.each do |option|
+                    % if donation.donation_amount? option
+                        <label><input type="checkbox" name="donation_amounts[{{option}}]" checked/> ${{option.to_s}}US</label>
+                    % else
+                        <label><input type="checkbox" name="donation_amounts[{{option}}]"/> ${{option.to_s}}US</label>
+                    % end
+                    &nbsp;
                 % end
             </div>
         </div>

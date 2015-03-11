@@ -36,7 +36,7 @@ class Campaigners < Cuba
     on "petitions/new" do
       render("petition/new",
              title: "Create New Petition",
-             form: partial('petition/form', petition: Petition.new, page_type: 'Petition'))
+             form: partial('petition/form', petition: Petition.new, page_type: 'Petition', target: 'petitions'))
     end
 
     on "petitions/save" do
@@ -97,7 +97,7 @@ class Campaigners < Cuba
       petition = Petition.find_by_slug slug
       render("petition/edit",
              title: "Create New Petition",
-             form: partial('petition/form', petition: petition, page_type: 'Petition'))
+             form: partial('petition/form', petition: petition, page_type: 'Petition', target: 'petitions'))
     end
 
     on "petitions" do
@@ -109,15 +109,78 @@ class Campaigners < Cuba
     ###################################
 
     on "donations/new" do
-      petition = Petition.new
+      donation = Donation.new
       render("donation/new",
              title: "Create New Donation Page",
-             form: partial('petition/form', petition: petition, page_type: 'Donation Page',
-                           donation_form: partial('donation/donation_subform', petition: petition)))
+             form: partial('petition/form', petition: donation, page_type: 'Donation Page', target: 'donations',
+                           donation_form: partial('donation/donation_subform', donation: donation)))
     end
 
-    on "donations/edit/:slug" do
+    on "donations/edit/:slug" do |slug|
+      donation = Donation.find_by_slug slug
+      render("donation/new",
+             title: "Create New Donation Page",
+             form: partial('petition/form', petition: donation, page_type: 'Donation Page', target: 'donations',
+                           donation_form: partial('donation/donation_subform', donation: donation)))
+    end
 
+    on "donations/save" do
+      on post do
+        params = req.POST
+        donation = (Donation.find_by_slug params['slug'] or Donation.new)
+        donation.name = params['name']
+        donation.title = params['title']
+        donation.slug = params['slug']
+        donation.body = params['body']
+        donation.mobile_body = params['mobile_body']
+        donation.facebook_title = params['facebook_title']
+        donation.language = params['language']
+        donation.alt_body = params['alt_body']
+        donation.image_url = params['image_url']
+        donation.image_text = params['image_text']
+        donation.suggested_tweets = params['suggested_tweets']
+        donation.goal = params['goal']
+        donation.auto_increment_goal = params['auto_increment_goal']
+        if donation.required_fields
+          donation.reset_required_fields
+        end
+        donation.add_required_fields params['required_fields'].keys
+
+        if donation.donation_amounts
+          donation.reset_donation_amounts
+        end
+        donation.add_donation_amounts params['donation_amounts'].keys
+        donation.blockquote = params['blockquote']
+        save_time = Time.now
+        donation.updated_at = save_time
+
+        if not donation.created_at
+          donation.created_at = save_time
+        end
+
+        donation.save
+
+        # TODO: This isn't saving the language for reasons unknown, need to fix.
+        res.write(ak_connector.create_donation_page(
+                      name=donation.slug,
+                      title=donation.title,
+                      lang=donation.language,
+                      canonical_url="#{env['HTTP_ORIGIN']}/donation/#{params['slug']}"
+                  ))
+        res.redirect "/donations/edit/#{params['slug']}"
+      end
+    end
+
+    on "donations/disable/:slug" do |slug|
+      donation = Donation.find_by_slug slug
+      if donation
+        donation.disabled = !donation.disabled
+        donation.save
+      else
+        not_found!
+      end
+
+      res.redirect "/donations/edit/#{slug}"
     end
 
 

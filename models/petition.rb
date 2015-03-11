@@ -5,5 +5,8 @@ require_relative '../models/slug_located'
 class Petition < Sequel::Model(:petitions)
   include RequiredFields
   include CustomLanguage
-  include SlugLocated
+
+  def self.find_by_slug(slug)
+    self.where(slug: slug).first
+  end
 end

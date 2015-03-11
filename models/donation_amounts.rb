@@ -5,7 +5,7 @@ module DonationAmounts
   end
 
   def valid_donation_amount?(amount)
-    (amount.is_a?(Numeric) and amount > 0)
+    (amount.to_i > 0)
   end
 
   def add_donation_amounts(amounts)
