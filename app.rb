@@ -64,11 +64,6 @@ Cuba.define do
     render("guests/donate", title: "SumOfUs")
   end
 
-  # Campaigns page
-  on "campaigns" do
-    render("guests/campaigns", title: "SumOfUs")
-  end
-
   # Homepage for members (guests) when going to http://192.168.59.103:5000
   on root do
     render("home", title: "SumOfUs")
