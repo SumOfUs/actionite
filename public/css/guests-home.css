@@ -55,3 +55,14 @@
   display: block;
   margin-bottom: 20px;
 }
+
+#error {
+   background-color: white;
+}
+
+#error * {
+  margin-top: 200px;
+  float: none;
+  display: table-cell;
+  vertical-align: bottom;
+}

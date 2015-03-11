@@ -1,2 +1,16 @@
-<br><br>
-<h1>Page not found.</h1>
+
+<div class = "container">
+  <div id="error" class="jumbotron">
+    <div class = "row">
+      <div class="col-xs-7">
+        <h1>
+          Page not found.<br>
+          That makes me a sad panda.
+        </h1>
+      </div>
+      <div class="col-xs-5">
+        <img src="img/sad_panda.jpeg" class="img-responsive"/>
+      </div>
+    </div>
+  </div>
+</div>
