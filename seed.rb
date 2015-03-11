@@ -1,5 +1,7 @@
 require_relative "app"
 
+# CREATE PETITION PAGES
+
 petitions = [
   {
     :name=>"Nestle Water",
@@ -171,3 +173,137 @@ petitions.each do |p|
   end
 end
 
+# CREATE DONATION PAGES
+
+donations = [
+  {
+    :name=>"Orangutans and Sumatran tigers",
+    :slug=>"orangutans_and_tigers",
+    :body=>"
+      <p><strong>Thank you so much for taking action and helping to save the habitat of endangered orangutans and Sumatran tigers.</strong></p>
+      <p>SumOfUs is global movement of people who are concerned about the increasing power of corporations and want to do something to stop it.</p>
+      <p>We don\'t accept any money from governments or corporations -- we\'re entirely funded by our members, everyday people like you.</p>
+      <p><strong>Will you chip in now so we can continue the fight for responsible palm oil</strong><strong>?</strong></p>",
+    :mobile_body=>"
+      <p><strong>Thank you so much for taking action and helping to save the habitat of endangered orangutans and Sumatran tigers.</strong></p>
+      <p>SumOfUs is global movement of people who are concerned about the increasing power of corporations and want to do something to stop it.</p>
+      <p>We don\'t accept any money from governments or corporations -- we\'re entirely funded by our members, everyday people like you.</p>
+      <p><strong>Will you chip in now so we can continue the fight for responsible palm oil</strong><strong>?</strong></p>",
+    :title=>"Let's help orangutans and Sumatran tigers",
+    :facebook_title=>"My FB Title",
+    :language=>"/rest/v1/language/100/",
+    :blockquote=>"Now, chip in to continue the fight for responsible palm oil",
+    :donation_amounts=>"10",
+    :alt_body=>nil,
+    :image_url=>"https://sumofus-production-media.s3.amazonaws.com/a/img/5c039ac3-7558-47f7-836b-cb384e050829.jpg",
+    :image_text=>"Thanks for taking action to help save orangutans like this little guy!",
+    :required_fields=>"email_address|country",
+    :suggested_tweets=>"My Donation Tweet",
+    :goal=>5000,
+    :auto_increment_goal=>nil,
+    :created_at=>"2015-03-11 18:24:19 -0300",
+    :updated_at=>"2015-03-11 18:24:19 -0300",
+    :disabled=>nil
+  },
+  {
+    :name=>"Monsanto in India",
+    :slug=>"monsanto_india",
+    :body=>"
+      <p>Thanks for adding your voice to this important campaign. Can <strong>you</strong> <strong>chip in to help stand up to Monsanto and keep it out of India?</strong><br><strong></strong></p>
+      <p>India\'s food crops are mostly Monsanto-seed-free -- but that will change this year, if we don\'t act now and stop Monsanto\'s newest attack.<br></p>
+      <p>Thanks for your support.</p>",
+    :mobile_body=>"
+      <p>Thanks for adding your voice to this important campaign. Can <strong>you</strong> <strong>chip in to help stand up to Monsanto and keep it out of India?</strong><br><strong></strong></p>
+      <p>India\'s food crops are mostly Monsanto-seed-free -- but that will change this year, if we don\'t act now and stop Monsanto\'s newest attack.<br></p>
+      <p>Thanks for your support.</p>",
+    :title=>"Monsanto stay out of India",
+    :facebook_title=>"My FB Title",
+    :language=>"/rest/v1/language/100/",
+    :blockquote=>"Thanks for taking action! Chip in to help stop Monsanto!",
+    :donation_amounts=>"5",
+    :alt_body=>nil,
+    :image_url=>"https://sumofus-production-media.s3.amazonaws.com/a/img/7ec8ef53-fca5-4981-bd42-cd14993b34e2.jpg",
+    :image_text=>"Your signature has been recorded! Now, help India's farmers stand up to Monsanto.",
+    :required_fields=>"email_address|country",
+    :suggested_tweets=>"My Donation Tweet",
+    :goal=>5000,
+    :auto_increment_goal=>nil,
+    :created_at=>"2015-03-11 18:24:19 -0300",
+    :updated_at=>"2015-03-11 18:24:19 -0300",
+    :disabled=>nil
+  },
+  {
+    :name=>"Coke Reusable Bottles",
+    :slug=>"coke_reusable_bottles",
+    :body=>"
+      <p>Coke\'s German customers have been using a popular eco-friendly reusable bottle scheme for decades -- but <strong>Coca-Cola has just announced it\'s killing off this responsible packaging scheme and will force people to use disposable plastic bottles that are extremely damaging to our environment.</strong></p>
+      <p>Tens of thousands of SumOfUs members from all over the world have already signed a petition to get Coke to reverse its plans, and it\'s kicked off more widespread opposition.</p>
+      <p>Together with our partners, we want to take the campaign to the next level. Our plan: <strong>move massive mobile billboards in front of Coke\'s head office in Germany to remind it of the scale of the pushback of this plan.</strong></p>
+      <p><a style=\"font-size: 14px; font-weight: bold; color: #00abbd;\">Can you chip in or whatever you can afford to tell Coke to hold onto its responsible reusable bottle scheme?</a></p>",
+    :mobile_body=>"
+      <p>Coke\'s German customers have been using a popular eco-friendly reusable bottle scheme for decades -- but <strong>Coca-Cola has just announced it\'s killing off this responsible packaging scheme and will force people to use disposable plastic bottles that are extremely damaging to our environment.</strong></p>
+      <p>Tens of thousands of SumOfUs members from all over the world have already signed a petition to get Coke to reverse its plans, and it\'s kicked off more widespread opposition.</p>
+      <p>Together with our partners, we want to take the campaign to the next level. Our plan: <strong>move massive mobile billboards in front of Coke\'s head office in Germany to remind it of the scale of the pushback of this plan.</strong></p>
+      <p><a style=\"font-size: 14px; font-weight: bold; color: #00abbd;\">Can you chip in or whatever you can afford to tell Coke to hold onto its responsible reusable bottle scheme?</a></p>",
+    :title=>"Coke about to put an end to its reusable bottles schema",
+    :facebook_title=>"My FB Title",
+    :language=>"/rest/v1/language/100/",
+    :blockquote=>"Chip in to stop Coke from scrapping its popular reusable bottle scheme.",
+    :donation_amounts=>"20",
+    :alt_body=>nil,
+    :image_url=>"https://sumofus-production-media.s3.amazonaws.com/a/img/df96d97d-49e3-41b7-b7b0-c69b3ef88005.jpg",
+    :image_text=>"Coke: don't shut down your reusable bottle scheme!",
+    :required_fields=>"email_address|country",
+    :suggested_tweets=>"My Donation Tweet",
+    :goal=>5000,
+    :auto_increment_goal=>nil,
+    :created_at=>"2015-03-11 18:24:19 -0300",
+    :updated_at=>"2015-03-11 18:24:19 -0300",
+    :disabled=>nil
+  },
+  {
+    :name=>"TPP in Hawaii",
+    :slug=>"tpp_hawaii",
+    :body=>"
+      <p>In just a couple of weeks time, <strong>the next negotiations for one of the world\'s biggest corporate power grabs, the TPP, are going to be meeting in Hawaii. </strong>While the surroundings might be beautiful, the subject matter certainly isn\'t: they\'ll be discussing how to increase corporations profits at the expense of our health, our environment and our rights at work.</p>
+      <p>The negotiators usually like to meet in places where protest is all but impossible like in Singapore, but by holding it in Hawaii, <strong>we\'ve got a big opportunity to show just how much opposition there is to this democracy-busting trade deal. </strong>But we\'ve only got a few weeks to put a plan into action.</p></p>
+      <p><strong>Can you chip in to help shine a light on what the TPP negotiators are getting up to?</strong><strong></strong><br></p>
+      <p><strong>We\'ve already shown that when we work together and chip in, we can have a big impact.</strong> In Ottawa, Canada, a SumOfUs campaigner got into the hotel where the negotiators were staying - and put our “Stop TPP\" leaflets under their hotel doors. In Sydney, we were part of huge group of people protesting right outside the hotel where the talks were taking place. This deal is dangerous.</p>
+      <p>All the secrecy means we don\'t know the gory details of what it contains, but we do know they\'re planning attacks on internet freedom, environmental protections and affordable medication. It\'s not good enough: people\'s health and freedom matter much more than how much money big companies make.</p>
+      <p><strong>SumOfUs members have been challenging the TPP for over a year now</strong> -- and many others have been campaigning for far longer than that. Big business would like us to believe we can\'t win this fight - that money will beat people power in the struggle for the global economy\'s future. But they\'re wrong -- and <strong>we can prove it at the talks in Honolulu.</strong></p>
+      <p>**********<br> More information:</p>
+      <p><a href=\"http://thehill.com/policy/finance/233383-tpp-negotiators-set-to-meet-next-month-in-hawaii\">TPP negotiators set to meet next month in Hawaii</a>. The Hill, Feb 20, 2015.<br><a href=\"http://www.japantimes.co.jp/news/2015/02/21/business/u-s-confirms-tpp-negotiators-will-meet-in-hawaii-next-month/#.VPRk_sZ4ZnE\">U.S. confirms TPP negotiators will meet in Hawaii next month</a>, Japan Times, Feb 21 2015.<br><br></p>",
+    :mobile_body=>"
+      <p>In just a couple of weeks time, <strong>the next negotiations for one of the world\'s biggest corporate power grabs, the TPP, are going to be meeting in Hawaii. </strong>While the surroundings might be beautiful, the subject matter certainly isn\'t: they\'ll be discussing how to increase corporations profits at the expense of our health, our environment and our rights at work.</p>
+      <p>The negotiators usually like to meet in places where protest is all but impossible like in Singapore, but by holding it in Hawaii, <strong>we\'ve got a big opportunity to show just how much opposition there is to this democracy-busting trade deal. </strong>But we\'ve only got a few weeks to put a plan into action.</p>
+      <p>So<strong> we need to act fast to break open the secrecy:</strong> working with campaigners in Hawaii to print banners, hand out flyers and get our message to the local communities who\'ll be affected by the deal if it gets agreed.</p>
+      <p><strong>Can you chip in to help shine a light on what the TPP negotiators are getting up to?</strong></p>",
+    :title=>"TPP negotiations in Hawaii",
+    :facebook_title=>"My FB Title",
+    :language=>"/rest/v1/language/100/",
+    :blockquote=>"Donate so we can get to the stop for the TPP: Hawaii.",
+    :donation_amounts=>"20",
+    :alt_body=>nil,
+    :image_url=>"https://sumofus-production-media.s3.amazonaws.com/a/img/b71ada7a-361a-44f3-a934-00f54c40bfaf.jpg",
+    :image_text=>"Emergency round of negotiations for the TPP in Hawaii.",
+    :required_fields=>"email_address|country",
+    :suggested_tweets=>"My Donation Tweet",
+    :goal=>5000,
+    :auto_increment_goal=>nil,
+    :created_at=>"2015-03-11 18:24:19 -0300",
+    :updated_at=>"2015-03-11 18:24:19 -0300",
+    :disabled=>nil
+  }
+]
+
+DB[:donations].delete
+
+donations.each do |d|
+  donation = Donation.find_by_slug d[:slug]
+
+  if donation
+    donation.update(d)
+  else
+    Donation.create(d)
+  end
+end
