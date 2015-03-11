@@ -1,15 +1,6 @@
-class Petition < Sequel::Model(:petitions)
-
+module RequiredFields
   def required_field_options
     [:member_name, :email_address, :city, :country, :state, :zip]
-  end
-
-  def language_options
-    {
-        english: '/rest/v1/language/100/',
-        french: '/rest/v1/language/103/',
-        german: '/rest/v1/language/104/'
-    }
   end
 
   def add_required_fields(fields)
@@ -36,10 +27,6 @@ class Petition < Sequel::Model(:petitions)
     else
       raise StandardError "#{symbol} is not an acceptable value."
     end
-  end
-
-  def self.find_by_slug(slug)
-    self.where(slug: slug).first
   end
 
   # To be used when new required fields are sent, prior to adding them again.

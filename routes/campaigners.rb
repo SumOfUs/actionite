@@ -29,10 +29,14 @@ class Campaigners < Cuba
       res.redirect "/"
     end
 
+
+    ###################################
+    ## Petitions
+    ###################################
     on "petitions/new" do
       render("petition/new",
              title: "Create New Petition",
-             form: partial('petition/form', petition: Petition.new))
+             form: partial('petition/form', petition: Petition.new, page_type: 'Petition'))
     end
 
     on "petitions/save" do
@@ -52,6 +56,9 @@ class Campaigners < Cuba
         petition.suggested_tweets = params['suggested_tweets']
         petition.goal = params['goal']
         petition.auto_increment_goal = params['auto_increment_goal']
+        if petition.required_fields
+          petition.reset_required_fields
+        end
         petition.add_required_fields params['required_fields'].keys
         petition.blockquote = params['blockquote']
         save_time = Time.now
@@ -68,7 +75,7 @@ class Campaigners < Cuba
             name=petition.slug,
             title=petition.title,
             lang=petition.language,
-            canonical_url="#{env['HTTP_ORIGIN']}/petition/"
+            canonical_url="#{env['HTTP_ORIGIN']}/petition/#{params['slug']}"
         ))
         res.redirect "edit/#{params['slug']}"
       end
@@ -90,12 +97,29 @@ class Campaigners < Cuba
       petition = Petition.find_by_slug slug
       render("petition/edit",
              title: "Create New Petition",
-             form: partial('petition/form', petition: petition))
+             form: partial('petition/form', petition: petition, page_type: 'Petition'))
     end
 
     on "petitions" do
       render "petition/index", title: "Petitions"
     end
+
+    ###################################
+    ## Donations
+    ###################################
+
+    on "donations/new" do
+      petition = Petition.new
+      render("donation/new",
+             title: "Create New Donation Page",
+             form: partial('petition/form', petition: petition, page_type: 'Donation Page',
+                           donation_form: partial('donation/donation_subform', petition: petition)))
+    end
+
+    on "donations/edit/:slug" do
+
+    end
+
 
     on(default) { not_found! }
   end

@@ -21,7 +21,7 @@
           <a class="navbar-brand" href="/">Home</a>
           <ul class="nav navbar-nav">
             <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/donation">New donation page</a></li>
+            <li><a href="/donations/new">New donation page</a></li>
             <li><a href="/petitions/new">New petition page</a></li>
             <li><a href="/logout">Log out</a></li>
           </ul>

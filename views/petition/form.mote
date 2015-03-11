@@ -4,13 +4,13 @@
         <div class="form-group">
             <label for="name" class="col-lg-3 control-label">Name:</label>
             <div class="col-lg-9">
-                <input type="text" name="name" placeholder="Enter Petition Name" class="form-control" value="{{petition.name}}"/>
+                <input type="text" name="name" placeholder="Enter {{page_type}} Name" class="form-control" value="{{petition.name}}"/>
             </div>
         </div>
         <div class="form-group">
             <label for="title" class="col-lg-3 control-label">Title:</label>
             <div class="col-lg-9">
-                <input type="text" name="title" placeholder="Enter Petition Title" class="form-control" value="{{petition.title}}"/>
+                <input type="text" name="title" placeholder="Enter {{page_type}} Title" class="form-control" value="{{petition.title}}"/>
             </div>
         </div>
         <div class="form-group">
@@ -58,6 +58,9 @@
             </div>
         </div>
     </fieldset>
+    % if defined? donation_form
+        {{donation_form}}
+    % end
     <fieldset>
         <legend><h3>Member Form Fields to Include</h3></legend>
         <div class="form-group">
@@ -112,11 +115,13 @@
     </fieldset>
 
     <div class="form-group">
-        <input type="submit" value="Create Petition" class="btn btn-info col-lg-offset-1"/>
-        % if petition.disabled
-            <a href="/petitions/disable/{{petition.slug}}" class="btn btn-danger pull-right">Disable Petition</a>
-        % else
-            <a href="/petitions/disable/{{petition.slug}}" class="btn btn-success pull-right">Enable Petition</a>
+        <input type="submit" value="Create {{page_type}}" class="btn btn-info col-lg-offset-1"/>
+        % if petition.id
+            % if petition.disabled
+                <a href="/petitions/disable/{{petition.slug}}" class="btn btn-danger pull-right">Disable {{page_type}}</a>
+            % else
+                <a href="/petitions/disable/{{petition.slug}}" class="btn btn-success pull-right">Enable {{page_type}}</a>
+            % end
         % end
     </div>
 </form>

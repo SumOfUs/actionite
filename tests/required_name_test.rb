@@ -12,7 +12,7 @@ setup do
 end
 
 test 'should not have any required fields by default' do |petition|
-  assert petition.required_fields == nil
+  assert petition.required_fields.nil?
 end
 
 test 'adding a single required field should end up with one' do |petition|
@@ -49,7 +49,7 @@ test 'resetting required fields resets the list' do |petition|
   petition.add_required_fields [:member_name, :email_address]
   assert petition.required_fields == 'member_name|email_address'
   petition.reset_required_fields
-  assert petition.required_fields == nil
+  assert petition.required_fields.nil?
   petition.add_required_fields [:member_name, :email_address]
   assert petition.required_fields == 'member_name|email_address'
 end

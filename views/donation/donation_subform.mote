@@ -1,0 +1,18 @@
+<fieldset>
+    <legend><h3>Donation Values</h3></legend>
+    <div class="form-group">
+        <label class="col-lg-3 control-label">Fields:</label>
+        <div class="col-lg-9">
+            <div class="checkbox">
+                % petition.required_field_options.each do |option|
+                % if petition.field_required? option
+                <label><input type="checkbox" name="required_fields[{{option}}]" checked/> {{option.to_s.sub('_', ' ').capitalize}}</label>
+                % else
+                <label><input type="checkbox" name="required_fields[{{option}}]"/> {{option.to_s.sub('_', ' ').capitalize}}</label>
+                % end
+                <br/>
+                % end
+            </div>
+        </div>
+    </div>
+</fieldset>
