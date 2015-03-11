@@ -8,15 +8,15 @@
   <div class = "row">
 
     <div id = "image_container" class = "col-md-7 col-xs-12">
-      <img src = "{{ donation.image_url }}" class = "img-responsive"></img>
+      <img src = {{ donation.image_url }} class = "img-responsive"></img>
       <p><blockquote id = "image_title" class ="pull-right">
-        {{ donation.image_text }}
+        {{donation.image_text}}
       </blockquote></p>
     </div>
 
-    <div id = "petition_container" class = "col-md-5 col-xs-12">
+    <div id = "donation_box" class = "col-md-5 col-xs-12">
       <blockquote>
-        {{ donation.blockquote }}
+        {{donation.blockquote}}
       </blockquote>
       <div class="donations-form-anchor"></div>
     </div>
@@ -24,6 +24,6 @@
 
   <!-- DONATION TEXT  -->
   <div id="donation_body">
-    {{ donation.body }}
+    {{donation.body}}
   </div>
 </div>
