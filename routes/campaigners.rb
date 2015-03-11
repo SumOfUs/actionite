@@ -13,7 +13,7 @@ class Campaigners < Cuba
 
   define do
     on "dashboard" do
-      render("campaigner/dashboard", title: "Actionite | Dashboard")
+      render("campaigner/dashboard", title: "Dashboard")
     end
 
     on "actionite" do
@@ -31,7 +31,7 @@ class Campaigners < Cuba
 
     on "petitions/new" do
       render("petition/new",
-             title: "Actionite | Create New Petition",
+             title: "Create New Petition",
              form: partial('petition/form', petition: Petition.new))
     end
 
@@ -89,12 +89,12 @@ class Campaigners < Cuba
     on "petitions/edit/:slug" do |slug|
       petition = Petition.find_by_slug slug
       render("petition/edit",
-             title: "Actionite | Create New Petition",
+             title: "Create New Petition",
              form: partial('petition/form', petition: petition))
     end
 
     on "petitions" do
-      render "petition/index", title: "Actionite | Petitions"
+      render "petition/index", title: "Petitions"
     end
 
     on(default) { not_found! }
