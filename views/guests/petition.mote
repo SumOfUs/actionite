@@ -284,10 +284,15 @@
               <button type="submit" class="btn btn-primary btn-block">Sign the petition</button>
             </div>
           </div>
-        </fieldset>  <!--END OF FORM-->
+        </fieldset>
       </form>
     </div>
   </div>
+<!-- PROGRESS METER!  -->
+<div class="progress progress-striped">
+  <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+</div>
+
   <!-- PETITION TEXT  -->
   <div id="petition_body">
     <p>
