@@ -1,5 +1,9 @@
 module DonationAmounts
 
+  def suggested_donation_amounts
+    [5, 10, 15, 20, 25, 40, 50, 75, 100, 200, 250, 350, 500, 1000]
+  end
+
   def valid_donation_amount?(amount)
     (amount.is_a?(Numeric) and amount > 0)
   end
