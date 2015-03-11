@@ -18,7 +18,7 @@
     <div class="row">
         <div class="col-l-3 col-md-6 campaign-box">
             <div class="row col-md-8">
-                <img src="http://sumofus.org/wp-content/uploads/2015/03/tar-sands-image.jpg" class="img-responsive">
+                <img src="/img/petitions/tar-sands.jpg" class="img-responsive">
                 <a href="/petition/alberta-government" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
@@ -29,7 +29,7 @@
 
         <div class="col-l-3 col-md-6">
             <div class="row col-md-8">
-                <img src="https://sumofus-production-media.s3.amazonaws.com/a/img/8bb36f34-ee8c-4c61-b21b-ae46021686d5.png" class="img-responsive">
+                <img src="/img/petitions/fast-track-tpp.jpg" class="img-responsive">
                 <a href="/petition/fast-track-tpp" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-l-3 col-md-6 campaign-box">
             <div class="row col-md-8">
-                <img src="https://sumofus-production-media.s3.amazonaws.com/a/img/89554179-47cc-42aa-aa88-114886b85175.jpg" class="img-responsive">
+                <img src="/img/petitions/great-barrier-reef.jpg" class="img-responsive">
                 <a href="/petition/great-barrier-reef" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
@@ -52,7 +52,7 @@
 
         <div class="col-l-3 col-md-6">
             <div class="row col-md-8">
-                <img src="https://sumofus-production-media.s3.amazonaws.com/a/img/494c7093-bfd3-4886-97e0-777b617d2ebc.jpg" class="img-responsive">
+                <img src="/img/petitions/nestle-water.jpg" class="img-responsive">
                 <a href="/petition/nestle-water" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
