@@ -27,6 +27,8 @@
           </ul>
         </div>
       </nav>
+        <!--So our floating navbar doesn't cut off the top of the content.-->
+        <div class="navbar-spacer">&nbsp;</div>
         <div class="container">
             {{ content }}
         </div>
