@@ -52,7 +52,7 @@ class Guests < Cuba
           res.redirect "/dashboard"
         # Wrong domain, goes back to members homepage
         else
-          res.redirect "/"
+          render("login_notification", title: "SumOfUs")
         end
       end
 
@@ -60,6 +60,10 @@ class Guests < Cuba
       on google_user.nil? do
         res.redirect "/actionite"
       end
+    end
+
+    on "dashboard" do
+      render("login_notification", title: "SumOfUs")
     end
 
     # Homepage for members (when going to http://192.168.59.103:5000)
