@@ -14,4 +14,3 @@ gem 'actionkit_connector'
 # For Testing
 gem 'cutest'
 gem 'sqlite3'
-

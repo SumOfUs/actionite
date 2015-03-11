@@ -1,4 +1,5 @@
 class Guests < Cuba
+  # We set the 'guests' layout as master template (file: /views/layout.guests.mote)
   settings[:mote][:layout] = "layout.guests"
 
   define do

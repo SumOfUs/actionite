@@ -1,0 +1,25 @@
+.campaign-abstract {
+    margin-left: 5px;    
+}
+
+.campaign-box {
+    margin-bottom: 40px;
+}
+
+.welcome {
+    padding-bottom: 0;
+    padding-top: 50px;
+}
+
+.welcome-banner {
+  padding-top: 30px;
+}
+
+.jumbotron-title {
+  margin-top:80px;
+  text-align: center;
+}
+
+#petition_body {
+  text-align: justify;
+}

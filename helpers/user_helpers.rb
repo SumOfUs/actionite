@@ -7,6 +7,7 @@ module UserHelpers
     super.merge(current_user: current_user)
   end
 
+  # This method is to sanitize inputs
   def h(text)
     text.to_s.encode(xml: :text)
   end

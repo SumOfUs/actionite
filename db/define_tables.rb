@@ -1,4 +1,3 @@
-
 def campaigners_table(db)
   begin
     # Some DBs return false, others raise an exception, this handles both cases.

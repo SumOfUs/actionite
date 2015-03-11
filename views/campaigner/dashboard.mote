@@ -1,5 +1,133 @@
-<h1>Welcome Campaigner!</h1>
+<span class="glyphglyphicon glyphglyphicon-search"></span>
 
-<p>This is the campaigns dashboard</p>
+<div class = "jumbotron welcome">
+  <div class="container welcome-banner">
+    <div class="row">
+        <div class="col-xs-3">
+            <img src="/img/sou.png"/>
+        </div>
+        <div class="col-xs-9">
+          <h1>Welcome, {{'campaigner_name'}}!</h1>
+          <p>
+            This is the campaigners' dashboard.
+          </p>
+        </div>
+    </div>
+  </div>
+</div>
 
-<a href="/logout">Log out</a>
+<div class ="container">
+  <div class="content">
+    <h2>Recent petition pages</h2>
+      <table id = "petitions" class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="text-left long">Name</th>
+            <th>Actions</th>
+            <th>Language</th>
+            <th>Created</th>
+            <th>Link</th>
+            <th>Edit</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+              <td>1</td>
+              <td class="text-left long"><a href="">Canada endangered species</a></td>
+              <td>2</td>
+              <td>English</td>
+              <td>01/30/15</td>
+              <td><a href="" target="_blank"><i class="glyphicon glyphicon-bookmark"></i></a></td>
+              <td><a href="#edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#delete" class="delete"><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td class="text-left long"><a href="/28/">Monsanto Maui campaign</a></td>
+              <td>2</td>
+              <td>English</td>
+              <td>01/14/15</td>
+              <td><a href="" target="_blank"><i class="glyphicon glyphicon-bookmark"></i></a></td>
+              <td><a href="#edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#delete" class="delete"><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td class="text-left long"><a href="/27/">Evil Awards 2014</a></td>
+              <td>13</td>
+              <td>English</td>
+              <td>12/18/14</td>
+              <td><a href="" target="_blank"><i class="glyphicon glyphicon-bookmark"></i></a></td>
+              <td><a href="#edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#delete" class="delete"><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+
+        </tbody>
+      </table>
+
+    <h2>Recent donation pages</h2>
+
+      <table id = "donations" class="table table-striped table-bordered">
+
+        <thead>
+          <tr>
+            <th></th>
+            <th class="text-left long">Name</th>
+            <th>Raised</th>
+            <th>Actions</th>
+            <th>Language</th>
+            <th>Created</th>
+            <th>Link</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+              <td>1</td>
+              <td><a href="">TPP Hawaii Advertiser fundraiser</a></td>
+              <td>$30,253</td>
+              <td>4</td>
+              <td>English</td>
+              <td>01/23/15</td>
+              <td><a href="" target="_blank"><i class="glyphicon glyphicon-bookmark"></i></a></td>
+              <td><a href="#edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#delete" class="delete"><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td><a href="">Save the tigers!</a></td>
+              <td>$13,403</td>
+              <td>2</td>
+              <td>English</td>
+              <td>01/14/15</td>
+              <td><a href="" target="_blank"><i class="glyphicon glyphicon-bookmark"></i></a></td>
+              <td><a href="#edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#delete" class="delete"><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+
+
+            <tr>
+              <td>3</td>
+              <td><a href="/26/">Spiders are cute, too.</a></td>
+              <td>$133,234,403</td>
+              <td>2</td>
+              <td>English</td>
+              <td>11/19/14</td>
+              <td><a href="" target="_blank"><i class="glyphicon glyphicon-bookmark"></i></a></td>
+              <td><a href="#edit"><i class="glyphicon glyphicon-pencil"></i></a></td>
+              <td><a href="#delete" class="delete"><i class="glyphicon glyphicon-remove"></i></a></td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+</div>
