@@ -19,7 +19,7 @@
         <div class="col-l-3 col-md-6 campaign-box">
             <div class="row col-md-8">
                 <img src="/img/petitions/tar-sands.jpg" class="img-responsive">
-                <a href="/petition/alberta-government" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/alberta_water_laws" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
                 <h4>The Alberta government’s water rules read like an industry wish list.</h4>
@@ -30,7 +30,7 @@
         <div class="col-l-3 col-md-6">
             <div class="row col-md-8">
                 <img src="/img/petitions/fast-track-tpp.jpg" class="img-responsive">
-                <a href="/petition/fast-track-tpp" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/fast_track" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
                 <h4>A small but growing number in Congress could stall or stop Fast Track and the TPP.</h4>
@@ -42,7 +42,7 @@
         <div class="col-l-3 col-md-6 campaign-box">
             <div class="row col-md-8">
                 <img src="/img/petitions/great-barrier-reef.jpg" class="img-responsive">
-                <a href="/petition/great-barrier-reef" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/great_barrier_reef" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
                 <h4>What kind of government would lobby banks to destroy our Great Barrier Reef?</h4>
@@ -53,7 +53,7 @@
         <div class="col-l-3 col-md-6">
             <div class="row col-md-8">
                 <img src="/img/petitions/nestle-water.jpg" class="img-responsive">
-                <a href="/petition/nestle-water" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/nestle_water" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
                 <h4>Nestlé is about to buy Canada’s precious water for pennies.</h4>

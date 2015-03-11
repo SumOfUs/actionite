@@ -51,7 +51,8 @@ Cuba.define do
 
   # Petition page
   on "petition/:slug" do |slug|
-    render("guests/petition", title: "SumOfUs")
+    petition = Petition.find_by_slug slug
+    render("guests/petition", title: "SumOfUs", petition: petition)
   end
 
   # Donation page
