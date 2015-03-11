@@ -1,6 +1,15 @@
+require 'actionkit_connector'
+
 class Campaigners < Cuba
   # We set the 'campaigners' layout as master template (file: /views/layout.campaigners.mote)
   settings[:mote][:layout] = "layout.campaigners"
+
+  # Need our ActionKit connection data.
+  AK_API_USER = ENV.fetch 'AK_API_USERNAME'
+  AK_API_PASSWORD = ENV.fetch 'AK_API_PASSWORD'
+  AK_API_HOST = ENV.fetch 'AK_API_URL'
+
+  ak_connector = ActionKitConnector::Connector.new AK_API_USER, AK_API_PASSWORD, AK_API_HOST
 
   define do
     on "dashboard" do
@@ -27,7 +36,33 @@ class Campaigners < Cuba
     end
 
     on "petitions/save" do
-      p params
+      on post do
+        params = req.POST
+        petition = (Petition.find_by_slug params['slug'] or Petition.new)
+        petition.name = params['name']
+        petition.title = params['title']
+        petition.slug = params['slug']
+        petition.body = params['body']
+        petition.mobile_body = params['mobile_body']
+        petition.facebook_title = params['facebook_title']
+        petition.language = params['language']
+        petition.alt_body = params['alt_body']
+        petition.image_url = params['image_url']
+        petition.image_text = params['image_text']
+        petition.suggested_tweets = params['suggested_tweets']
+        petition.goal = params['goal']
+        petition.auto_increment_goal = params['goal']
+        petition.add_required_fields params['required_fields'].keys
+        petition.save
+
+        res.write(ak_connector.create_petition_page(
+            name=petition.slug,
+            title=petition.title,
+            lang=petition.language,
+            canonical_url="#{env['HTTP_ORIGIN']}/petition/"
+        ))
+        res.redirect "edit/#{params['slug']}"
+      end
     end
 
     on "petitions/edit/:slug" do |slug|

@@ -1,4 +1,4 @@
-<form action="petitions/save" method="post" class="form-horizontal">
+<form action="/petitions/save" method="post" class="form-horizontal">
     <fieldset>
         <legend><h3>Required Fields</h3></legend>
         <div class="form-group">
@@ -60,9 +60,9 @@
                 <div class="checkbox">
                     % petition.required_field_options.each do |option|
                         % if petition.field_required? option
-                            <label><input type="checkbox" name="{{option}}" checked/> {{option.to_s.sub('_', ' ').capitalize}}</label>
+                            <label><input type="checkbox" name="required_fields[{{option}}]" checked/> {{option.to_s.sub('_', ' ').capitalize}}</label>
                         % else
-                            <label><input type="checkbox" name="{{option}}"/> {{option.to_s.sub('_', ' ').capitalize}}</label>
+                            <label><input type="checkbox" name="required_fields[{{option}}]"/> {{option.to_s.sub('_', ' ').capitalize}}</label>
                         % end
                         <br/>
                     % end

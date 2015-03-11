@@ -49,7 +49,7 @@ class Petition < Sequel::Model(:petitions)
 
   protected
   def add_required_field(field)
-    if self.required_field_options.include? field
+    if self.required_field_options.include? field.to_sym
       if not self.required_fields_list.include? field.to_s
         if self.required_fields_list.empty?
           self.required_fields = "#{field}"
