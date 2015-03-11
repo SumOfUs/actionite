@@ -1,2 +1,29 @@
-<br><br>
-<h1>Please donate for this campaign now!</1>
+<div class="jumbotron jumbotron-title">
+  <div class = "container">
+    <h1 id = "donation_title">{{donation.title}}</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class = "row">
+
+    <div id = "image_container" class = "col-md-7 col-xs-12">
+      <img src = "{{ donation.image_url }}" class = "img-responsive"></img>
+      <p><blockquote id = "image_title" class ="pull-right">
+        {{ donation.image_text }}
+      </blockquote></p>
+    </div>
+
+    <div id = "petition_container" class = "col-md-5 col-xs-12">
+      <blockquote>
+        {{ donation.blockquote }}
+      </blockquote>
+      <div class="donations-form-anchor"></div>
+    </div>
+  </div>
+
+  <!-- DONATION TEXT  -->
+  <div id="donation_body">
+    {{ donation.body }}
+  </div>
+</div>
