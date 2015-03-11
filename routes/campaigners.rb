@@ -51,7 +51,7 @@ class Campaigners < Cuba
         petition.image_text = params['image_text']
         petition.suggested_tweets = params['suggested_tweets']
         petition.goal = params['goal']
-        petition.auto_increment_goal = params['goal']
+        petition.auto_increment_goal = params['auto_increment_goal']
         petition.add_required_fields params['required_fields'].keys
         petition.save
 
