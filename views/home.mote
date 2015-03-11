@@ -2,7 +2,7 @@
   <div class="container welcome-banner">
     <div class="row">
         <div class="col-xs-3">
-            <img src="http://googlequitthechamber.org/img/sou.png"/>
+            <img src="/img/sou.png"/>
         </div>
         <div class="col-xs-9">
           <h1>Welcome to SumOfUs!</h1>
