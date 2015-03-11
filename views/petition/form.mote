@@ -51,6 +51,12 @@
                 <textarea name="mobile_body" rows="10" placeholder="Enter the mobile page's text here." class="form-control">{{petition.mobile_body}}</textarea>
             </div>
         </div>
+        <div class="form-group">
+            <label for="blockquote" class="col-lg-3 control-label">Quote for signature:</label>
+            <div class="col-lg-9">
+                <input type="text" name="blockquote" placeholder="The quote which will appear above the signature form" class="form-control" value="{{petition.blockquote}}"/>
+            </div>
+        </div>
     </fieldset>
     <fieldset>
         <legend><h3>Member Form Fields to Include</h3></legend>

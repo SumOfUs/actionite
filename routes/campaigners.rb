@@ -53,6 +53,13 @@ class Campaigners < Cuba
         petition.goal = params['goal']
         petition.auto_increment_goal = params['auto_increment_goal']
         petition.add_required_fields params['required_fields'].keys
+        petition.blockquote = params['blockquote']
+        petition.updated_at = Time.now
+
+        if not petition.created_at
+          petition.created_at = Time.now
+        end
+        
         petition.save
 
         # TODO: This isn't saving the language for reasons unknown, need to fix.

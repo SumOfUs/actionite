@@ -46,6 +46,7 @@ def create_petitions_table(db)
     String :title, null: false
     String :facebook_title, null: false
     String :language, default: '/rest/v1/language/100/'
+    String :blockquote, null: false
 
     # The other details
     Text :alt_body
@@ -55,5 +56,13 @@ def create_petitions_table(db)
     String :suggested_tweets
     Integer :goal
     TrueClass :auto_increment_goal, :default => false
+
+    # Housekeeping
+    DateTime :created_at
+    DateTime :updated_at
+
+    # Allow us to disable Petitions - index because it'll be part of all queries.
+    TrueClass :disabled
+    index :disabled
   end
 end
