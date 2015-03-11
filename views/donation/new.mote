@@ -1,0 +1,6 @@
+<h2>Create New Donation Page</h2>
+<br/>
+<div class="col-lg-8">
+    {{ form }}
+</div>
+
