@@ -20,7 +20,7 @@
   text-align: center;
 }
 
-#petition_body {
+#petition_body, #donation_body {
   text-align: justify;
 }
 
