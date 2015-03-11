@@ -23,3 +23,35 @@
 #petition_body {
   text-align: justify;
 }
+
+.donation-next-btn-header, 
+.donation-submit-header {
+  font-family: Open Sans !important;
+}
+
+.donation-next-btn {
+  background-color: #00ABBD !important;
+}
+
+.donation-header {
+  color: #00ABBD !important;
+}
+
+.donation-progress-banner {
+  background-color: #DD4814 !important;
+}
+
+#donation-banner {
+  background-image: url("../img/donations/rainforest.jpg");
+  color: white;
+}
+
+.text-body {
+  display: block;
+  margin-top, margin-bottom: 50px;
+}
+
+#donation-container {
+  display: block;
+  margin-bottom: 20px;
+}
