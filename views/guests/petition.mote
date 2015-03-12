@@ -23,7 +23,7 @@
           <div class="form-group">
             <label for="input_email" class="col-lg-3 control-label">Email</label>
             <div class="col-lg-9">
-              % if signature.errors[:email] == [:not_present]
+              % if signature.errors[:email].include? :not_present
                 <p id="validation-error">Email is required</p>
               % end
               <input name="signature[email]" class="form-control" id="input_email" placeholder="Email" type="text" value="{{signature.email}}">
@@ -32,7 +32,7 @@
           <div class="form-group">
             <label for="full_name" class="col-lg-3 control-label">Full Name</label>
             <div class="col-lg-9">
-              % if signature.errors[:full_name] == [:not_present]
+              % if signature.errors[:full_name].include? :not_present
                 <p id="validation-error">Full name is required</p>
               % end
               <input name="signature[full_name]" class="form-control" id="full_name" type="text" value="{{signature.full_name}}">
@@ -41,7 +41,7 @@
           <div class="form-group">
             <label for="id_country" class="col-lg-3 control-label">Country</label>
             <div class="col-lg-6 pull-left">
-              % if signature.errors[:country] == [:not_present]
+              % if signature.errors[:country].include? :not_present
                 <p id="validation-error">Country is required</p>
               % end
               <select name="signature[country]" id="id_country" class="required" autocomplete="off">
@@ -59,7 +59,7 @@
           <div class="form-group">
             <label for="id_zip" class="col-lg-3 control-label">Postal/ZIP code</label>
             <div class="col-lg-9">
-              % if signature.errors[:id_zip] == [:not_present]
+              % if signature.errors[:id_zip].include? :not_present
                 <p id="validation-error">Postal/ZIP code is required</p>
               % end
               <input name="signature[id_zip]" class="form-control" id="id_zip" type="text" value="{{signature.id_zip}}">
