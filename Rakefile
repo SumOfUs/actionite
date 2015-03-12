@@ -23,3 +23,7 @@ end
 task :test do
   puts `cutest ./tests/*.rb`
 end
+
+task :seed do
+  `env $(cat .env) ruby seed.rb`
+end
