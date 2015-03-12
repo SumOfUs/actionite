@@ -1,0 +1,72 @@
+.campaign-abstract {
+    margin-left: 5px;    
+}
+
+.campaign-box {
+    margin-bottom: 40px;
+}
+
+.welcome {
+  padding-bottom: 0;
+  padding-top: 50px;
+}
+
+.welcome-banner {
+  padding-top: 30px;
+}
+
+.navbar-spacer {
+    padding-top: 4em;
+}
+
+.jumbotron-title {
+  margin-top:80px;
+  text-align: center;
+}
+
+#petition_body, #donation_body {
+  text-align: justify;
+}
+
+.donation-next-btn-header, 
+.donation-submit-header {
+  font-family: Open Sans !important;
+}
+
+.donation-next-btn {
+  background-color: #00ABBD !important;
+}
+
+.donation-header {
+  color: #00ABBD !important;
+}
+
+.donation-progress-banner {
+  background-color: #DD4814 !important;
+}
+
+#donation-banner {
+  background-image: url("../img/donations/rainforest.jpg");
+  color: white;
+}
+
+.text-body {
+  display: block;
+  margin-top, margin-bottom: 50px;
+}
+
+#donation-container {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#error {
+   background-color: white;
+}
+
+#error * {
+  margin-top: 200px;
+  float: none;
+  display: table-cell;
+  vertical-align: bottom;
+}

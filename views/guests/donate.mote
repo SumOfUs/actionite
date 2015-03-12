@@ -1,2 +1,30 @@
-<br><br>
-<h1>Please donate now!</1>
+<div class="jumbotron" id="donation-banner">
+  <div class = "container">
+    <h1 id = "petition_title">Make a donation to support Our ongoing work</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div id = "donation-container" class = "row">
+    <div id = "image_container" class = "col-md-7 col-xs-12">
+      <img src = "img/donations/sou.jpg" class = "img-responsive"></img>
+      <p><blockquote id = "image_title" class ="pull-right">
+        You can help keep SumOfUs strong!</blockquote></p>
+    </div>
+
+    <div id = "donation_container" class = "col-md-5 col-xs-12">
+      <div class="donations-form-anchor"></div>
+    </div>
+  </div>
+  <div class="text-body">
+    <p>
+      SumOfUs exists to challenge corporate power and fight for people over profits -- so we can't take a dime in corporate or government money. 
+    </p>
+    <p>
+      SumOfUs is funded entirely by donations from thousands of members across the globe.
+    </p>
+    <p>
+      Can you chip in and help make sure we can move fast to win the campaigns that matter to all of us? You can make a secure donation on this page.
+    </p>
+  </div>
+</div>
