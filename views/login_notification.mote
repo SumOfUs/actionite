@@ -1,3 +1,14 @@
-<br><br>
-<h3>It seems you're not logged in to Actionite or you're not logged in to Google with your SumOfUs account.<br>
-Please, make sure to be logged in to Google with your SumOfUs account and try to <a href="/actionite">log in to Actionite again</a>.</h3>
+<div class = "container">
+  <div id="error" class="jumbotron">
+    <div class = "row">
+      <div class="col-xs-7">
+        <h3>
+          It seems you're not logged in to Actionite or you're not logged in to Google with your SumOfUs account. Please, make sure to be logged in to Google with your SumOfUs account and then <a href="/actionite">access Actionite again</a>
+        </h3>
+      </div>
+      <div class="col-xs-5">
+        <img src="/img/sad_panda.jpeg" class="img-responsive"/>
+      </div>
+    </div>
+  </div>
+</div>
