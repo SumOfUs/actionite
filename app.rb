@@ -73,11 +73,11 @@ Cuba.define do
           # Creates action in ActionKit
           res.write(AK_CONNECTOR.create_action(
                         name = petition.slug,
-                        email = signature.email,
-                        full_name = signature.full_name,
-                        country = signature.country,
-                        id_zip = signature.id_zip,
-                        canonical_url = "#{env['HTTP_ORIGIN']}/petition/#{slug}"
+                        email = signature.email
+                        # full_name = signature.full_name,
+                        # country = signature.country,
+                        # id_zip = signature.id_zip,
+                        # canonical_url = "#{env['HTTP_ORIGIN']}/petition/#{slug}"
                     ))
           # Redirects to Share page
           render("petition/share", title: "SumOfUs")
