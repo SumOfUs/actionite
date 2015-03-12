@@ -14,6 +14,7 @@ module UserHelpers
 
   def not_found!
     res.status = 404
+    res.headers["Content-Type"] = "text/html; charset=utf-8"
     render("404", title: "Not found")
     halt res.finish
   end
