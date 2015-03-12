@@ -1,15 +1,6 @@
-require 'actionkit_connector'
-
 class Campaigners < Cuba
   # We set the 'campaigners' layout as master template (file: /views/layout.campaigners.mote)
   settings[:mote][:layout] = "layout.campaigners"
-
-  # Need our ActionKit connection data.
-  AK_API_USER = ENV.fetch 'AK_API_USERNAME'
-  AK_API_PASSWORD = ENV.fetch 'AK_API_PASSWORD'
-  AK_API_HOST = ENV.fetch 'AK_API_URL'
-
-  ak_connector = ActionKitConnector::Connector.new AK_API_USER, AK_API_PASSWORD, AK_API_HOST
 
   define do
     on "dashboard" do
@@ -28,7 +19,6 @@ class Campaigners < Cuba
       logout(Campaigner)
       res.redirect "/"
     end
-
 
     ###################################
     ## Petitions
@@ -71,7 +61,7 @@ class Campaigners < Cuba
         petition.save
 
         # TODO: This isn't saving the language for reasons unknown, need to fix.
-        res.write(ak_connector.create_petition_page(
+        res.write(AK_CONNECTOR.create_petition_page(
             name=petition.slug,
             title=petition.title,
             lang=petition.language,
@@ -161,7 +151,7 @@ class Campaigners < Cuba
         donation.save
 
         # TODO: This isn't saving the language for reasons unknown, need to fix.
-        res.write(ak_connector.create_donation_page(
+        res.write(AK_CONNECTOR.create_donation_page(
                       name=donation.slug,
                       title=donation.title,
                       lang=donation.language,

@@ -1,5 +1,5 @@
 .campaign-abstract {
-    margin-left: 5px;    
+    margin-left: 5px;
 }
 
 .campaign-box {
@@ -34,7 +34,7 @@
   text-align: justify;
 }
 
-.donation-next-btn-header, 
+.donation-next-btn-header,
 .donation-submit-header {
   font-family: Open Sans !important;
 }
@@ -75,4 +75,10 @@
   float: none;
   display: table-cell;
   vertical-align: bottom;
+}
+
+#validation-error {
+  font-size: 0.9em;
+  color: red;
+  font-style: italic;
 }
