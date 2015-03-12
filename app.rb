@@ -1,9 +1,11 @@
 Encoding.default_external = "UTF-8"
 
+require 'actionkit_connector'
 require "cuba"
 require "cuba/contrib"
 require "mote"
 require "rack/protection"
+require "scrivener"
 require "sequel"
 require "shield"
 
@@ -13,8 +15,16 @@ CLIENT_ID = ENV.fetch("CLIENT_ID")
 POSTGRES_DB = ENV.fetch("POSTGRES_DB")
 GOOGLE_FETCH_USER = ENV.fetch("GOOGLE_FETCH_USER")
 
+# Need our ActionKit connection data.
+AK_API_USER = ENV.fetch 'AK_API_USERNAME'
+AK_API_PASSWORD = ENV.fetch 'AK_API_PASSWORD'
+AK_API_HOST = ENV.fetch 'AK_API_URL'
+
 # Connect to the db
 DB = Sequel.connect(POSTGRES_DB)
+
+# Connect to ActionKit
+AK_CONNECTOR = ActionKitConnector::Connector.new AK_API_USER, AK_API_PASSWORD, AK_API_HOST
 
 # Load plugins
 Cuba.plugin Cuba::Mote
@@ -22,6 +32,7 @@ Cuba.plugin Cuba::TextHelpers
 Cuba.plugin Shield::Helpers
 
 # Load all files of these folders
+Dir["./filters/**/*.rb"].each  { |rb| require rb }
 Dir["./helpers/**/*.rb"].each  { |rb| require rb }
 Dir["./lib/**/*.rb"].each  { |rb| require rb }
 Dir["./models/**/*.rb"].each  { |rb| require rb }
@@ -49,11 +60,47 @@ Cuba.define do
   # We set the 'guests' layout as master template (file: /views/layout.guests.mote)
   settings[:mote][:layout] = "layout.guests"
 
+  # Sign petition
+  on "petition/sign/:slug" do |slug|
+    petition = Petition.find_by_slug slug
+
+    if petition
+      on post, param("signature") do |atts|
+
+        signature = NewSignature.new(atts)
+
+        on signature.valid? do
+          # Creates action in ActionKit
+          res.write(AK_CONNECTOR.create_action(
+                        name = petition.slug,
+                        email = signature.email,
+                        full_name = signature.full_name,
+                        country = signature.country,
+                        id_zip = signature.id_zip,
+                        canonical_url = "#{env['HTTP_ORIGIN']}/petition/#{slug}"
+                    ))
+          # Redirects to Share page
+          render("petition/share", title: "SumOfUs")
+        end
+
+        on default do
+          render("guests/petition", title: "SumOfUs", petition: petition,
+                  signature: signature)
+        end
+      end
+    else
+      not_found!
+    end
+  end
+
   # Petition page
   on "petition/:slug" do |slug|
     petition = Petition.find_by_slug slug
+
     if petition
-      render("guests/petition", title: "SumOfUs", petition: petition)
+      signature = NewSignature.new({})
+      render("guests/petition", title: "SumOfUs", petition: petition,
+        signature: signature)
     else
       not_found!
     end
