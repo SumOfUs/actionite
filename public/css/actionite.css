@@ -24,6 +24,12 @@
   text-align: center;
 }
 
+#slick-container {
+  width:85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #petition_body, #donation_body {
   text-align: justify;
 }
@@ -61,11 +67,11 @@
 }
 
 #error {
+   margin-top: 200px;
    background-color: white;
 }
 
 #error * {
-  margin-top: 200px;
   float: none;
   display: table-cell;
   vertical-align: bottom;
