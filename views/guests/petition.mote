@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-title">
   <div class = "container">
-    <h1 id = "petition_title">Sign the petition to Alberta Premier Jim Prentice</h1>
+    <h1 id = "petition_title">{{ petition.title }}</h1>
   </div>
 </div>
 
@@ -8,17 +8,17 @@
   <div class = "row">
 
     <div id = "image_container" class = "col-md-7 col-xs-12">
-      <img src = "https://sumofus-production-media.s3.amazonaws.com/a/img/51a22243-7b40-4099-aff6-c67eba2c50e2.jpg" class = "img-responsive"></img>
+      <img src = "{{ petition.image_url }}" class = "img-responsive"></img>
       <p><blockquote id = "image_title" class ="pull-right">
         <span class = "glyphicon glyphicon-arrow-up"></span>
-        This is why we can't let industry write environmental rules.</blockquote></p>
+        {{ petition.image_text }}</blockquote></p>
     </div>
 
     <div id = "petition_container" class = "col-md-5 col-xs-12">
       <form class="form-horizontal">
         <fieldset>
           <blockquote>
-            Stop letting industry write policy. Fix the Surface Water Quantity Framework and Tailings Management Framework rules now.
+            {{ petition.blockquote }}
           </blockquote>
           <div class="form-group">
             <label for="input_email" class="col-lg-3 control-label">Email</label>
@@ -35,7 +35,7 @@
           <div class="form-group">
             <label for="id_country" class="col-lg-3 control-label">Country</label>
             <div class="col-lg-6 pull-left">
-              <select name="country" id="id_country" class="required" autocomplete="off">                  
+              <select name="country" id="id_country" class="required" autocomplete="off">
                 <option value="">-- Select --</option>
                 <option value="Australia">Australia</option>
                 <option value="Canada">Canada</option>
@@ -269,7 +269,7 @@
                 <option value="Western Sahara">Western Sahara</option>
                 <option value="Yemen">Yemen</option>
                 <option value="Zambia">Zambia</option>
-                <option value="Zimbabwe">Zimbabwe</option>   
+                <option value="Zimbabwe">Zimbabwe</option>
               </select>
             </div>
           </div>
@@ -295,43 +295,6 @@
 
   <!-- PETITION TEXT  -->
   <div id="petition_body">
-    <p>
-      The <strong>Alberta government is about to release new rules that decide how much water tar sands companies can take </strong>from the Athabasca River to extract water-intensive bitumen.
-    </p>
-    <p>
-      The law reads like an <strong>industry wish list</strong> -- giving generous exemptions to tar sands companies to take as much water from the Athabasca River whenever they want it -- even when animals, plant life and the ecosystem are in danger.
-    </p>
-    <p>
-      This is reckless. <strong>These new rules are an environmental disaster waiting to happen</strong> -- especially after the Alberta government promised "world-leading environmental protection". A massive public outcry could force the government to go back to the negotiating table and stop giving handouts to tar sands companies.
-    </p>
-    <p>
-      <strong>Sign the petition to the Alberta government: go back to the negotiating table and release water rules that protect the Athabasca -- not corporate profits.</strong>
-    </p>
-    <p>
-      The Alberta government claims it consulted First Nations and scientists when drafting these new rules -- but these new rules are not only dangerous; they're the very proposals put forward by companies like Suncor and Syncrude. <strong>This is corporate takeover of our democracy.</strong>
-    </p>
-    <p>
-      Tar sands bitumen is the most water-intensive oil on the planet -- it takes<strong> three times more fresh water to produce bitumen than conventional oil.</strong> These laws literally impact the survival of a river system and countless species of animals and plant life. We can't allow this government-industry collusion to stand.
-    </p>
-    <p>
-      The Alberta government has been told by First Nations, scientists and experts repeatedly of the need for a critical cut off level to protect one of the most important watersheds in the world. And now, their callousness is putting<strong> the Athabasca River in real danger.</strong>
-    </p>
-    <p>
-      <strong>Sign the petition to the Alberta government: stop being in the industry's back pocket and release water laws that protect the Athabasca River.</strong>
-    </p>
-    <p>
-      This isn't just about water. This is a bigger issue of <strong>corporate capture of our governments, and of corporate power run amok.</strong> Industry shouldn't get handouts -- especially when there's so much at stake.
-    </p>
-    <p>
-      Our community has been hard at work making sure government and industry are accountable to people over profits -- and together, <strong>we've helped protect wolves, whales and our natural parks from industry</strong><strong>.</strong> Last year, we collectively fought the Alberta government when it tried to let tar sands companies write children's school curriculum. Now, let's make sure it doesn't give Big Oil free reign over the Athabasca River.
-    </p>
-    <p>
-      ***********
-    </p>
-    <p>
-      For more information:
-      <br>
-      <a href="http://www.ctvnews.ca/sci-tech/alberta-s-plan-for-athabasca-river-pathetic-not-science-based-critics-1.1735778">Alberta's plan for Athabasca River 'pathetic,' not science-based: critics</a>, CTV News, March 19 2014.<br><a href="http://www.theglobeandmail.com/report-on-business/industry-news/energy-and-resources/alberta-to-rewrite-oil-sands-tailings-ponds-regulations/article22033854/">Alberta to rewrite oil sands tailings ponds regulations</a>. The Globe and Mail. December 10, 2014. 
-    </p>
+    {{ petition.body }}
   </div>
 </div>

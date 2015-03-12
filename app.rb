@@ -51,12 +51,22 @@ Cuba.define do
 
   # Petition page
   on "petition/:slug" do |slug|
-    render("guests/petition", title: "SumOfUs")
+    petition = Petition.find_by_slug slug
+    if petition
+      render("guests/petition", title: "SumOfUs", petition: petition)
+    else
+      not_found!
+    end
   end
 
   # Donation page
   on "donation/:slug" do |slug|
-    render("guests/donation", title: "SumOfUs")
+    donation = Donation.find_by_slug slug
+    if donation
+      render("guests/donation", title: "SumOfUs", donation: donation)
+    else
+      not_found!
+    end
   end
 
   # Donate page (for a general donation not related to any specific campaign)
