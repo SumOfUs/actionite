@@ -80,7 +80,7 @@ Cuba.define do
                         # canonical_url = "#{env['HTTP_ORIGIN']}/petition/#{slug}"
                     )
           # Redirects to Share page
-          render("petition/share", title: "SumOfUs")
+          render("petition/share", title: "SumOfUs", slug: slug)
         end
 
         on default do

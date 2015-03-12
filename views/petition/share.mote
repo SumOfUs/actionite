@@ -1,3 +1,7 @@
 <br><br>
 <h2>Thanks for signin this petition!</h2>
 <h2>Please, share it with your friends</h2>
+
+<p>The 'slug' parameter is available at this page to be able to send a "Post in Facebook", "Tweet about this petition" or "Send an Email" request with the correct petition.</p>
+
+<p>This is the slug for this page: {{ slug }}</p>
