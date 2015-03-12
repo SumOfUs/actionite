@@ -5,12 +5,15 @@
     <title>{{ title }}</title>
     <script src="https://apis.google.com/js/client:platform.js" async defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- SLICK IMPORT AND SCRIPT for the image carouselle on front page -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
+    <script type="text/javascript" src="/js/slick.js"></script>
 
     <!-- <link href="/css/bootstrap-theme.css" rel="stylesheet" media="screen"> -->
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
     <link href="/css/actionite.css" rel="stylesheet" media="screen">
 
-    <!-- SLICK sheets -->
+    <!-- SLICK sheets for landing page campaign carousel -->
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
     <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick-theme.css"/>
   </head>
@@ -36,50 +39,6 @@
       {{ content }}
 
     </section>
-    <!-- SLICK IMPORT for the image carouselle on front page -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.min.js"></script>
-    <!-- SLICK SCRIPT for the image carouselle on front page -->
-    <script>
-      $(document).ready(function(){
-        $('.autoplay').slick(
-          {
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true,
-            responsive: [
-              {
-                breakpoint: 1024,
-                settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 1,
-                  infinite: true,
-                  dots: true
-                }
-              },
-              {
-                breakpoint: 600,
-                settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 1
-                }
-              },
-              {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-                }
-              }
-              // You can unslick at a given breakpoint now by adding:
-              // settings: "unslick"
-              // instead of a settings object
-            ]
-          }
-        );
-      });
-    </script>
   </body>
 
   <!-- TEST DONATION WIDGET -->
