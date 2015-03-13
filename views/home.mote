@@ -16,49 +16,74 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-l-3 col-md-6 campaign-box">
-            <div class="row col-md-8">
-                <img src="/img/petitions/tar-sands.jpg" class="img-responsive">
-                <a href="/petition/alberta_laws" class="btn btn-default btn-lg btn-block">Take action!</a>
+        % donations.each do |donation|
+            <div class="col-l-3 col-md-6 campaign-box">
+                <div class="row col-md-8">
+                    <img src="{{donation.image_url}}" class="img-responsive">
+                    <a href="/donation/{{donation.slug}}" class="btn btn-default btn-lg btn-block">Take action!</a>
+                </div>
+                <div class="row col-md-4 campaign-abstract">
+                    <h4>{{donation.title}}</h4>
+                    <p>{{donation.body[0..150].rstrip}}&hellip;<a href="/donation/{{donation.slug}}" class="">more</a></p>
+                </div>
             </div>
-            <div class="row col-md-4 campaign-abstract">
-                <h4>The Alberta government’s water rules read like an industry wish list.</h4>
-                <p>The Alberta government is days away from releasing reckless new water rules that hand oil companies the right to take as... more</p>
+        % end
+        
+        % petitions.each do |petition|
+            <div class="col-l-3 col-md-6 campaign-box">
+                <div class="row col-md-8">
+                    <img src="{{petition.image_url}}" class="img-responsive">
+                    <a href="/petition/{{petition.slug}}" class="btn btn-default btn-lg btn-block">Take action!</a>
+                </div>
+                <div class="row col-md-4 campaign-abstract">
+                    <h4>{{petition.title}}</h4>
+                    <p>{{petition.body[0..150].rstrip}}&hellip;<a href="/petition/{{petition.slug}}" class="">more</a></p>
+                </div>
             </div>
-        </div>
+        % end
+        <!--<div class="col-l-3 col-md-6 campaign-box">-->
+            <!--<div class="row col-md-8">-->
+                <!--<img src="/img/petitions/tar-sands.jpg" class="img-responsive">-->
+                <!--<a href="/petition/alberta_laws" class="btn btn-default btn-lg btn-block">Take action!</a>-->
+            <!--</div>-->
+            <!--<div class="row col-md-4 campaign-abstract">-->
+                <!--<h4>The Alberta government’s water rules read like an industry wish list.</h4>-->
+                <!--<p>The Alberta government is days away from releasing reckless new water rules that hand oil companies the right to take as... more</p>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="col-l-3 col-md-6">
-            <div class="row col-md-8">
-                <img src="/img/petitions/fast-track-tpp.jpg" class="img-responsive">
-                <a href="/petition/fast_track" class="btn btn-default btn-lg btn-block">Take action!</a>
-            </div>
-            <div class="row col-md-4 campaign-abstract">
-                <h4>A small but growing number in Congress could stall or stop Fast Track and the TPP.</h4>
-                <p>U.S. lawmakers are days away from introducing dangerous new legislation to ram a massive trade pact through without democratic oversight.</p>
-            </div>
-        </div>
+        <!--<div class="col-l-3 col-md-6">-->
+            <!--<div class="row col-md-8">-->
+                <!--<img src="/img/petitions/fast-track-tpp.jpg" class="img-responsive">-->
+                <!--<a href="/petition/fast_track" class="btn btn-default btn-lg btn-block">Take action!</a>-->
+            <!--</div>-->
+            <!--<div class="row col-md-4 campaign-abstract">-->
+                <!--<h4>A small but growing number in Congress could stall or stop Fast Track and the TPP.</h4>-->
+                <!--<p>U.S. lawmakers are days away from introducing dangerous new legislation to ram a massive trade pact through without democratic oversight.</p>-->
+            <!--</div>-->
+        <!--</div>-->
     </div>
-    <div class="row">
-        <div class="col-l-3 col-md-6 campaign-box">
-            <div class="row col-md-8">
-                <img src="/img/petitions/great-barrier-reef.jpg" class="img-responsive">
-                <a href="/petition/great_barrier_reef" class="btn btn-default btn-lg btn-block">Take action!</a>
-            </div>
-            <div class="row col-md-4 campaign-abstract">
-                <h4>What kind of government would lobby banks to destroy our Great Barrier Reef?</h4>
-                <p>Big international banks have publicly backed out of funding the destruction of the Great Barrier Reef, but now our government is... more</p>
-            </div>
-        </div>
+    <!--<div class="row">-->
+        <!--<div class="col-l-3 col-md-6 campaign-box">-->
+            <!--<div class="row col-md-8">-->
+                <!--<img src="/img/petitions/great-barrier-reef.jpg" class="img-responsive">-->
+                <!--<a href="/petition/great_barrier_reef" class="btn btn-default btn-lg btn-block">Take action!</a>-->
+            <!--</div>-->
+            <!--<div class="row col-md-4 campaign-abstract">-->
+                <!--<h4>What kind of government would lobby banks to destroy our Great Barrier Reef?</h4>-->
+                <!--<p>Big international banks have publicly backed out of funding the destruction of the Great Barrier Reef, but now our government is... more</p>-->
+            <!--</div>-->
+        <!--</div>-->
 
-        <div class="col-l-3 col-md-6">
-            <div class="row col-md-8">
-                <img src="/img/petitions/nestle-water.jpg" class="img-responsive">
-                <a href="/petition/nestle_water" class="btn btn-default btn-lg btn-block">Take action!</a>
-            </div>
-            <div class="row col-md-4 campaign-abstract">
-                <h4>Nestlé is about to buy Canada’s precious water for pennies.</h4>
-                <p>British Columbia, a Canadian province, will finally start charging companies like Nestlé for taking its groundwater and bottling it to sell... more</p>
-            </div>
-        </div>
-    </div>
+        <!--<div class="col-l-3 col-md-6">-->
+            <!--<div class="row col-md-8">-->
+                <!--<img src="/img/petitions/nestle-water.jpg" class="img-responsive">-->
+                <!--<a href="/petition/nestle_water" class="btn btn-default btn-lg btn-block">Take action!</a>-->
+            <!--</div>-->
+            <!--<div class="row col-md-4 campaign-abstract">-->
+                <!--<h4>Nestlé is about to buy Canada’s precious water for pennies.</h4>-->
+                <!--<p>British Columbia, a Canadian province, will finally start charging companies like Nestlé for taking its groundwater and bottling it to sell... more</p>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
 </div>

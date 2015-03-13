@@ -4,8 +4,8 @@ class Campaigners < Cuba
 
   define do
     on "dashboard" do
-      petitions = Petition.order(:created_at).limit(3)
-      donations = Donation.order(:created_at).limit(3)
+      petitions = Petition.order(Sequel.desc(:created_at)).limit(3)
+      donations = Donation.order(Sequel.desc(:created_at)).limit(3)
       render("campaigner/dashboard", title: "Dashboard", petitions: petitions, donations: donations)
     end
 
