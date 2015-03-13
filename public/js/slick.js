@@ -1,4 +1,13 @@
 $(document).ready(function(){
+
+  $('.variable-width').slick({
+    centerMode: true,
+    variableWidth: true,
+    speed:300,
+    slidesToShow:1,
+    lazyLoad: 'ondemand'
+  });
+
   $('.autoplay').slick(
     {
       slidesToShow: 3,
