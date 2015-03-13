@@ -6,7 +6,9 @@ class Campaigners < Cuba
     on "dashboard" do
       petitions = Petition.order(:created_at).limit(3)
       donations = Donation.order(:created_at).limit(3)
-      render("campaigner/dashboard", title: "Dashboard", petitions: petitions, donations: donations)
+      render("campaigner/dashboard", title: "Dashboard",
+        petitions: petitions, donations: donations,
+        campaigner: current_user)
     end
 
     on "actionite" do
