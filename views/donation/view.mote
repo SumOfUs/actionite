@@ -1,4 +1,4 @@
-<h2>{{petition.name}}</h2>
+<h2>{{donation.name}}</h2>
 <br/>
 <div class="row">
     <fieldset class="col-lg-3">
@@ -18,13 +18,15 @@
             </tbody>
         </table>
     </fieldset>
-    <fieldset class="col-lg-5">
+    <fieldset class="col-lg-9">
         <legend>Social Statistics</legend>
         <table class="table table-striped">
             <thead>
             <tr>
-                <td>Total Actions</td>
-                <td>New User Actions</td>
+                <td>Donations</td>
+                <td>Donation Total</td>
+                <td>New User Donations</td>
+                <td>New User Donation Total</td>
                 <td>Total Shares</td>
                 <td>New User Shares</td>
             </tr>
@@ -32,7 +34,9 @@
             <tbody>
             <tr>
                 <td class="danger">1200</td>
+                <td class="info">$3786.50</td>
                 <td class="success">250</td>
+                <td class="success">$997.89</td>
                 <td class="danger">90</td>
                 <td class="danger">4</td>
             </tr>
@@ -42,15 +46,15 @@
 </div>
 <br/>
 <div class="row">
-    <fieldset class="col-lg-8">
+    <fieldset class="col-lg-10">
         <legend>Page Testing Information</legend>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <td>Variation Name</td>
                     <td>Variation Description</td>
-                    <td>Number of Actions</td>
-                    <td>Percentage of actions</td>
+                    <td>Number of Donations</td>
+                    <td>Percentage of Donations</td>
                 </tr>
             </thead>
             <tbody>
@@ -93,7 +97,7 @@
 </div>
 
 <div class="row">
-    <fieldset class="col-lg-8">
+    <fieldset class="col-lg-10">
         <legend>Share Testing Information</legend>
         <table class="table table-striped">
             <thead>

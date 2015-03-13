@@ -33,7 +33,7 @@ class Campaigners < Cuba
 
     on "petitions/view/:slug" do |slug|
       petition = Petition.find_by_slug slug
-      render("petition/view", title: "View Petition", petition: petition, page_type: 'Petition', target: 'petitions')
+      render("petition/view", title: "View Petition", petition: petition)
     end
 
     on "petitions/save" do
@@ -111,6 +111,11 @@ class Campaigners < Cuba
              title: "Create New Donation Page",
              form: partial('petition/form', petition: donation, page_type: 'Donation Page', target: 'donations',
                            donation_form: partial('donation/donation_subform', donation: donation)))
+    end
+
+    on "donations/view/:slug" do |slug|
+      donation = Donation.find_by_slug slug
+      render("donation/view", title: "View Petition", donation: donation)
     end
 
     on "donations/edit/:slug" do |slug|
