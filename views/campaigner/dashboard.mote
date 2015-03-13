@@ -7,7 +7,7 @@
             <img src="/img/sou.png"/>
         </div>
         <div class="col-xs-9">
-          <h1>Welcome, {{'campaigner_name'}}!</h1>
+          <h1>Welcome, {{campaigner.given_name}}!</h1>
           <p>
             This is the campaigners' dashboard.
           </p>

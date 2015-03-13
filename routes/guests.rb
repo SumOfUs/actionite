@@ -40,9 +40,12 @@ class Guests < Cuba
             google_id = google_user['id']
             email = google_user['emails'][0]['value']
             image = google_user['image']['url']
+            given_name = google_user['name']['givenName']
+            family_name = google_user['name']['familyName']
 
             campaigner = Campaigner.create(google_id: google_id,
-                email: email, image: image)
+                email: email, image: image, given_name: given_name,
+                family_name: family_name)
           end
 
           # Authenticates the campaigner, from this moment, inside the session
