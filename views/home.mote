@@ -5,6 +5,21 @@
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick-theme.css"/>
 
+<div class="variable-width" id="photo_banner">
+    <img src="/img/banner_images/0008.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0009.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0010.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0011.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0012.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0013.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0001.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0002.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0003.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0004.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0005.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0006.jpg" class="img-responsive"/>
+    <img src="/img/banner_images/0007.jpg" class="img-responsive"/>
+</div>
 
 <div class="jumbotron welcome">
   <div class="container welcome-banner">
