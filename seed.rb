@@ -88,7 +88,7 @@ petitions = [
   },
   {
     :name=>"Alberta Water Laws",
-    :slug=>"alberta_water_laws",
+    :slug=>"alberta_laws",
     :body=>'
       <p>The <strong>Alberta government is about to release new rules that decide how much water tar sands companies can take </strong>from the Athabasca River to extract water-intensive bitumen.</p>
       <p>The law reads like an <strong>industry wish list</strong> -- giving generous exemptions to tar sands companies to take as much water from the Athabasca River whenever they want it -- even when animals, plant life and the ecosystem are in danger.</p>
