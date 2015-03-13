@@ -1,5 +1,5 @@
 require_relative '../db/define_tables'
-require 'sequel'
+require_relative '../app'
 
 setup do
   # Need to set up our in-memory DB before we initialize the model.
