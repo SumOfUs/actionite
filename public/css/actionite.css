@@ -23,6 +23,10 @@
     padding-top: 4em;
 }
 
+#navbar-border {
+    border-width: 0;
+}
+
 .jumbotron-title {
   margin-top:80px;
   text-align: center;
@@ -85,4 +89,10 @@
   font-size: 0.9em;
   color: red;
   font-style: italic;
+}
+
+#logo-navbar {
+  margin: 0 20px 0 0;
+  padding: 3px 12px;
+  background-color: white;
 }

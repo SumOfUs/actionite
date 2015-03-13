@@ -21,7 +21,7 @@ task :db do
 end
 
 task :test do
-  puts `cutest ./tests/*.rb`
+  puts `env $(cat .env) cutest ./tests/*.rb`
 end
 
 task :seed do
