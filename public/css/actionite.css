@@ -15,6 +15,10 @@
   padding-top: 30px;
 }
 
+#photo_banner {
+  margin-top: 3em;
+}
+
 .navbar-spacer {
     padding-top: 4em;
 }
@@ -26,6 +30,12 @@
 .jumbotron-title {
   margin-top:80px;
   text-align: center;
+}
+
+#slick-container {
+  width:85%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #petition_body, #donation_body {
@@ -65,11 +75,11 @@
 }
 
 #error {
+   margin-top: 200px;
    background-color: white;
 }
 
 #error * {
-  margin-top: 200px;
   float: none;
   display: table-cell;
   vertical-align: bottom;
@@ -85,4 +95,8 @@
   margin: 0 20px 0 0;
   padding: 3px 12px;
   background-color: white;
+}
+
+.btn {
+  border-radius: 0;
 }

@@ -1,41 +1,47 @@
+<div id = "photo_banner">
+    <img src="/img/banner.jpeg" class="img-responsive"/>
+</div>
+
 <div class="jumbotron welcome">
   <div class="container welcome-banner">
     <div class="row">
         <div class="col-xs-3">
-            <img src="/img/sou.png"/>
+            <img src="/img/sou.png" class="img-responsive"/>
         </div>
         <div class="col-xs-9">
           <h1>Welcome to SumOfUs!</h1>
           <p>
-            This is the home page for members.<br>
-            Styling and content still under construction. :}
+            SumOfUs is a movement of consumers, workers and shareholders speaking with one voice to counterbalance the growing power of large corporations. Join us on our journey as we seek to make the world a better place for ourselves, our children and all who share our planet.
           </p>
         </div>
     </div>
   </div>
 </div>
+
 <div class="container">
     <div class="row">
         % donations.each do |donation|
-            <div class="col-l-3 col-md-6 campaign-box">
-                <div class="row col-md-8">
+            <div class="col-md-6 campaign-box">
+                <div class="row col-md-8 col-s-12">
                     <img src="{{donation.image_url}}" class="img-responsive">
-                    <a href="/donation/{{donation.slug}}" class="btn btn-default btn-lg btn-block">Take action!</a>
+                    <a href="/donation/{{donation.slug}}" class="btn btn-success btn-lg btn-block">Chip in to help!</a>
                 </div>
-                <div class="row col-md-4 campaign-abstract">
+                <div class="row col-md-4 col-s-12 campaign-abstract">
                     <h4>{{donation.title}}</h4>
                     <p>{{donation.body[0..150].rstrip}}&hellip;<a href="/donation/{{donation.slug}}" class="">more</a></p>
                 </div>
             </div>
         % end
-        
+    </div>
+
+    <div class="row">
         % petitions.each do |petition|
-            <div class="col-l-3 col-md-6 campaign-box">
-                <div class="row col-md-8">
+            <div class="col-md-6 campaign-box">
+                <div class="row col-md-8 col-s-12">
                     <img src="{{petition.image_url}}" class="img-responsive">
-                    <a href="/petition/{{petition.slug}}" class="btn btn-default btn-lg btn-block">Take action!</a>
+                    <a href="/petition/{{petition.slug}}" class="btn btn-warning btn-lg btn-block">Take action!</a>
                 </div>
-                <div class="row col-md-4 campaign-abstract">
+                <div class="row col-md-4 col-s-12 campaign-abstract">
                     <h4>{{petition.title}}</h4>
                     <p>{{petition.body[0..150].rstrip}}&hellip;<a href="/petition/{{petition.slug}}" class="">more</a></p>
                 </div>
