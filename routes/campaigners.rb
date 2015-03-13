@@ -31,6 +31,11 @@ class Campaigners < Cuba
              form: partial('petition/form', petition: Petition.new, page_type: 'Petition', target: 'petitions'))
     end
 
+    on "petitions/view/:slug" do |slug|
+      petition = Petition.find_by_slug slug
+      render("petition/view", title: "View Petition", petition: petition, page_type: 'Petition', target: 'petitions')
+    end
+
     on "petitions/save" do
       on post do
         params = req.POST

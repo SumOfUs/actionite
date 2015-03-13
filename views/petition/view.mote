@@ -1,0 +1,21 @@
+<h3>{{petition.name}}</h3>
+
+<fieldset>
+    <legend>Overall Analytics</legend>
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <td>MeRA</td>
+                <td>Users Returning for Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>3.6%</td>
+                <td>2.1%</td>
+            </tr>
+        </tbody>
+    </table>
+</fieldset>
+
+
