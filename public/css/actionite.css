@@ -19,6 +19,10 @@
     padding-top: 4em;
 }
 
+#navbar-border {
+    border-width: 0;
+}
+
 .jumbotron-title {
   margin-top:80px;
   text-align: center;
