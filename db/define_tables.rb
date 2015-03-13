@@ -38,6 +38,8 @@ def create_campaigners_table(db)
     String :google_id
     String :email
     String :image
+    String :given_name
+    String :family_name
   end
 end
 

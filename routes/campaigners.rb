@@ -4,9 +4,11 @@ class Campaigners < Cuba
 
   define do
     on "dashboard" do
-      petitions = Petition.order(Sequel.desc(:created_at)).limit(3)
-      donations = Donation.order(Sequel.desc(:created_at)).limit(3)
-      render("campaigner/dashboard", title: "Dashboard", petitions: petitions, donations: donations)
+      petitions = Petition.order(:created_at).limit(3)
+      donations = Donation.order(:created_at).limit(3)
+      render("campaigner/dashboard", title: "Dashboard",
+        petitions: petitions, donations: donations,
+        campaigner: current_user)
     end
 
     on "actionite" do
@@ -29,6 +31,11 @@ class Campaigners < Cuba
       render("petition/new",
              title: "Create New Petition",
              form: partial('petition/form', petition: Petition.new, page_type: 'Petition', target: 'petitions'))
+    end
+
+    on "petitions/view/:slug" do |slug|
+      petition = Petition.find_by_slug slug
+      render("petition/view", title: "View Petition", petition: petition)
     end
 
     on "petitions/save" do
@@ -106,6 +113,11 @@ class Campaigners < Cuba
              title: "Create New Donation Page",
              form: partial('petition/form', petition: donation, page_type: 'Donation Page', target: 'donations',
                            donation_form: partial('donation/donation_subform', donation: donation)))
+    end
+
+    on "donations/view/:slug" do |slug|
+      donation = Donation.find_by_slug slug
+      render("donation/view", title: "View Petition", donation: donation)
     end
 
     on "donations/edit/:slug" do |slug|

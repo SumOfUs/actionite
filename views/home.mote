@@ -24,7 +24,7 @@
             <div class="col-md-6 campaign-box">
                 <div class="row col-md-8 col-s-12">
                     <img src="{{donation.image_url}}" class="img-responsive">
-                    <a href="/donation/{{donation.slug}}" class="btn btn-warning btn-lg btn-block">Take action!</a>
+                    <a href="/donation/{{donation.slug}}" class="btn btn-success btn-lg btn-block">Chip in to help!</a>
                 </div>
                 <div class="row col-md-4 col-s-12 campaign-abstract">
                     <h4>{{donation.title}}</h4>
@@ -39,7 +39,7 @@
             <div class="col-md-6 campaign-box">
                 <div class="row col-md-8 col-s-12">
                     <img src="{{petition.image_url}}" class="img-responsive">
-                    <a href="/petition/{{petition.slug}}" class="btn btn-success btn-lg btn-block">Chip in to help!</a>
+                    <a href="/petition/{{petition.slug}}" class="btn btn-warning btn-lg btn-block">Take action!</a>
                 </div>
                 <div class="row col-md-4 col-s-12 campaign-abstract">
                     <h4>{{petition.title}}</h4>
