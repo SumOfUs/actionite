@@ -5,20 +5,8 @@
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick.css"/>
 <link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.4.1/slick-theme.css"/>
 
-<div class="variable-width" id="photo_banner">
-    <img src="/img/banner_images/0006.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0007.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0008.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0009.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0010.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0011.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0012.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0013.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0001.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0002.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0003.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0004.jpg" class="img-responsive"/>
-    <img src="/img/banner_images/0005.jpg" class="img-responsive"/>
+<div id = "photo_banner">
+    <img src="/img/banner.jpeg" class="img-responsive"/>
 </div>
 
 <div class="jumbotron welcome">
@@ -37,47 +25,48 @@
   </div>
 </div>
 
-<div id = "slick-container">
-    <div class="autoplay campaign-box">
-        <div class="col-l-3 col-md-4">
-            <div class="row col-xs-6">
+<div class="container">
+    <div class="row">
+        <div class="col-l-3 col-md-6 campaign-box">
+            <div class="row col-md-8 col-s-12">
                 <img src="/img/petitions/tar-sands.jpg" class="img-responsive">
-                <a href="/petition/alberta_water_laws" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/alberta_water_laws" class="btn btn-warning btn-lg btn-block">Take action!</a>
             </div>
-            <div class="row col-xs-6 campaign-abstract">
+            <div class="row col-md-4 col-s-12 campaign-abstract">
                 <h4>The Alberta government’s water rules read like an industry wish list.</h4>
                 <p>The Alberta government is days away from releasing reckless new water rules that hand oil companies the right to take as... more</p>
             </div>
         </div>
 
-        <div class="col-l-3 col-md-4">
-            <div class="row col-xs-6">
+        <div class="col-l-3 col-md-6 campaign-box">
+            <div class="row col-md-8 col-s-12">
                 <img src="/img/petitions/fast-track-tpp.jpg" class="img-responsive">
-                <a href="/petition/fast_track" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/fast_track" class="btn btn-warning btn-lg btn-block">Take action!</a>
             </div>
-            <div class="row col-xs-6 campaign-abstract">
+            <div class="row col-md-4 col-s-12 campaign-abstract">
                 <h4>A small but growing number in Congress could stall or stop Fast Track and the TPP.</h4>
                 <p>U.S. lawmakers are days away from introducing dangerous new legislation to ram a massive trade pact through without democratic oversight.</p>
             </div>
         </div>
-
-        <div class="col-l-3 col-md-4">
-            <div class="row col-xs-6">
+    </div>
+    <div class="row">
+        <div class="col-l-3 col-md-6 campaign-box">
+            <div class="row col-md-8 col-s-12">
                 <img src="/img/petitions/great-barrier-reef.jpg" class="img-responsive">
-                <a href="/petition/great_barrier_reef" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/great_barrier_reef" class="btn btn-warning btn-lg btn-block">Take action!</a>
             </div>
-            <div class="row col-xs-6 campaign-abstract">
+            <div class="row col-md-4 col-s-12 campaign-abstract">
                 <h4>What kind of government would lobby banks to destroy our Great Barrier Reef?</h4>
                 <p>Big international banks have publicly backed out of funding the destruction of the Great Barrier Reef, but now our government is... more</p>
             </div>
         </div>
 
-        <div class="col-l-3 col-md-4">
-            <div class="row col-xs-6">
+        <div class="col-l-3 col-md-6 campaign-box">
+            <div class="row col-md-8 col-s-12">
                 <img src="/img/petitions/nestle-water.jpg" class="img-responsive">
-                <a href="/petition/nestle_water" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/nestle_water" class="btn btn-warning btn-lg btn-block">Take action!</a>
             </div>
-            <div class="row col-xs-6 campaign-abstract">
+            <div class="row col-md-4 col-s-12 campaign-abstract">
                 <h4>Nestlé is about to buy Canada’s precious water for pennies.</h4>
                 <p>British Columbia, a Canadian province, will finally start charging companies like Nestlé for taking its groundwater and bottling it to sell... more</p>
             </div>
