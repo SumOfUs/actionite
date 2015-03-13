@@ -19,7 +19,7 @@
         <div class="col-l-3 col-md-6 campaign-box">
             <div class="row col-md-8">
                 <img src="/img/petitions/tar-sands.jpg" class="img-responsive">
-                <a href="/petition/alberta_water_laws" class="btn btn-default btn-lg btn-block">Take action!</a>
+                <a href="/petition/alberta_laws" class="btn btn-default btn-lg btn-block">Take action!</a>
             </div>
             <div class="row col-md-4 campaign-abstract">
                 <h4>The Alberta government’s water rules read like an industry wish list.</h4>
