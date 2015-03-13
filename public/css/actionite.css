@@ -96,3 +96,7 @@
   padding: 3px 12px;
   background-color: white;
 }
+
+.btn {
+  border-radius: 0;
+}
