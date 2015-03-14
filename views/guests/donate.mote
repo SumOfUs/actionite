@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-  <div id = "donation-container" class = "row">
+  <div id = "donation" class = "row">
     <div id = "image_container" class = "col-md-7 col-xs-12">
       <img src = "img/donations/sou.jpg" class = "img-responsive"></img>
       <p><blockquote id = "image_title" class ="pull-right">
@@ -13,7 +13,7 @@
     </div>
 
     <div id = "donation_container" class = "col-md-5 col-xs-12">
-      <div class="donations-form-anchor"></div>
+      <div class="donations-form-anchor full-width"></div>
     </div>
   </div>
   <div class="text-body">

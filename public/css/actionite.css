@@ -1,3 +1,7 @@
+html,body{
+    height: 100%
+}
+
 .campaign-abstract {
     margin-left: 5px;
 }
@@ -40,6 +44,7 @@
 
 #petition_body, #donation_body {
   text-align: justify;
+  clear:top;
 }
 
 .donation-next-btn-header,
@@ -97,6 +102,18 @@
   background-color: white;
 }
 
-.btn {
+.btn-sharp {
   border-radius: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+footer {
+  width:100%;
+  margin-top: 100px;
+  padding-top: 45px;
+  padding-bottom: 45px;
+  border-top: 2px dashed #AE3910;
 }
