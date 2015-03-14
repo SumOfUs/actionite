@@ -29,11 +29,26 @@
           </ul>
         </div>
       </nav>
-        <!--So our floating navbar doesn't cut off the top of the content.-->
-        <div class="navbar-spacer">&nbsp;</div>
-        <div class="container">
-            {{ content }}
-        </div>
+      <!--So our floating navbar doesn't cut off the top of the content.-->
+      <div class="navbar-spacer">&nbsp;</div>
+      <div class="container">
+          {{ content }}
+      </div>
     </section>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-4">
+              <img src = "/img/horiz-logo-color.png"/>
+            </div>
+            <div class = "col-xs-8 pull-right">
+              <p>Made with love and compassion. And coffee.</p>
+              <p>Contact us at <a href="mailto:info@sumofus.com">
+              info@sumofus.com</a>, or <a href="http://github.com/sumofus/actionite">fork us on GitHub</a>!</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </body>
   </body>
 </html>
