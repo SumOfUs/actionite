@@ -2,7 +2,7 @@ require_relative "app"
 
 # CREATE PETITION PAGES
 
-petitions = [
+PETITIONS = [
   {
     :name=>"Nestle Water",
     :slug=>"nestle_water",
@@ -163,7 +163,7 @@ petitions = [
 
 DB[:petitions].delete
 
-petitions.each do |p|
+PETITIONS.each do |p|
   petition = Petition.find_by_slug p[:slug]
 
   if petition
@@ -175,7 +175,7 @@ end
 
 # CREATE DONATION PAGES
 
-donations = [
+DONATIONS = [
   {
     :name=>"Orangutans and Sumatran tigers",
     :slug=>"orangutans_and_tigers",
@@ -298,7 +298,7 @@ donations = [
 
 DB[:donations].delete
 
-donations.each do |d|
+DONATIONS.each do |d|
   donation = Donation.find_by_slug d[:slug]
 
   if donation

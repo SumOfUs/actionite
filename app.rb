@@ -10,15 +10,15 @@ require "sequel"
 require "shield"
 
 # Grab environment variables from .env file
-APP_SECRET = ENV.fetch("APP_SECRET")
-CLIENT_ID = ENV.fetch("CLIENT_ID")
-POSTGRES_DB = ENV.fetch("POSTGRES_DB")
-GOOGLE_FETCH_USER = ENV.fetch("GOOGLE_FETCH_USER")
+APP_SECRET = ENV.fetch "APP_SECRET"
+CLIENT_ID = ENV.fetch "CLIENT_ID"
+POSTGRES_DB = ENV.fetch "POSTGRES_DB"
+GOOGLE_FETCH_USER = ENV.fetch "GOOGLE_FETCH_USER"
 
 # Need our ActionKit connection data.
-AK_API_USER = ENV.fetch 'AK_API_USERNAME'
-AK_API_PASSWORD = ENV.fetch 'AK_API_PASSWORD'
-AK_API_HOST = ENV.fetch 'AK_API_URL'
+AK_API_USER = ENV.fetch "AK_API_USERNAME"
+AK_API_PASSWORD = ENV.fetch "AK_API_PASSWORD"
+AK_API_HOST = ENV.fetch "AK_API_URL"
 
 # Connect to the db
 DB = Sequel.connect(POSTGRES_DB)

@@ -1,5 +1,4 @@
-require_relative '../db/define_tables'
-require_relative '../app'
+require_relative "../helper"
 
 setup do
   # Need to set up our in-memory DB before we initialize the model.
@@ -7,7 +6,6 @@ setup do
   donations_table db
 
   # Now we can initialize the model.
-  require_relative '../models/donation'
   Donation.new
 end
 
