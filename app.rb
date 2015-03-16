@@ -121,7 +121,7 @@ Cuba.define do
     render("guests/donate", title: "SumOfUs")
   end
 
-  # Homepage for members (guests) when going to http://192.168.59.103:5000
+  # Homepage for members (guests) when going to http://localhost:9393
   on root do
     petitions = Petition.order(Sequel.desc(:created_at)).limit(5)
     donations = Donation.order(Sequel.desc(:created_at)).limit(5)

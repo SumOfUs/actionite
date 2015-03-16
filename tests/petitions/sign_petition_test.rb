@@ -10,7 +10,7 @@ setup do
   # Create `petitions` table
   petitions_table(DB)
 
-  # Now we can insert a petition using the seed file.
+  # Create a petition using the seed file.
   Petition.create(PETITIONS[0])
 end
 

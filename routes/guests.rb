@@ -3,7 +3,7 @@ class Guests < Cuba
   settings[:mote][:layout] = "layout.guests"
 
   define do
-    # Homepage for campaigners (when going to http://192.168.59.103:5000/actionite)
+    # Homepage for campaigners (when going to http://localhost:9393/actionite)
     on "actionite" do
       render("actionite", title: "Actionite | Login")
     end
@@ -70,7 +70,7 @@ class Guests < Cuba
       render("login_notification", title: "SumOfUs")
     end
 
-    # Homepage for members (when going to http://192.168.59.103:5000)
+    # Homepage for members (when going to http://localhost:9393)
     on root do
       render("home", title: "SumOfUs")
     end
