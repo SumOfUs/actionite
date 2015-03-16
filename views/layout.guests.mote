@@ -11,30 +11,33 @@
     <link rel="shortcut icon" href="/img/favicon.ico">
   </head>
   <body>
-    <section>
-      <nav class="navbar navbar-default navbar-fixed-top" id="navbar-border">
-        <div class="container">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" id="logo-navbar" href="/"><img src="/img/sou-navbar.png"></a>
-          <a class="navbar-brand" href="/">Home</a>
-          <ul class="nav navbar-nav">
-            <li><a href="#">About</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="/donate">Donate</a></li>
-          </ul>
-        </div>
-      </nav>
-
-      {{ content }}
-
-    </section>
-
-    <footer>
+    <!-- WRAP CONTAINER FOR STICKY FOOTER -->
+    <div id="wrap">
+      <section>
+        <nav class="navbar navbar-default navbar-fixed-top" id="navbar-border">
+          <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" id="logo-navbar" href="/"><img src="/img/sou-navbar.png"></a>
+            <a class="navbar-brand" href="/">Home</a>
+            <ul class="nav navbar-nav">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Press</a></li>
+              <li><a href="/donate">Donate</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div id="main">
+          {{ content }}
+        </div> 
+      </section>
+    <!-- END OF WRAP DIV -->
+    </div>
+    <footer id = "footer">
       <div class="container">
         <div class="row">
           <div class="col-xs-4">
