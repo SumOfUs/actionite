@@ -188,6 +188,12 @@
             var image_cropper_parameters = create_cropper_parameters(14, 10, 'image');
             image_cropper_parameters.update = function (coordinates) {
                 for (item in coordinates) {
+                    // TODO: Change this with the respective proportion, 
+                    $("#image_x").val()
+                    $("#image_y").val()
+                    $("#image_height").val()
+                    $("#image_width").val()
+
                     document.getElementById("image_"+ item).value = coordinates[item];
                 }
             }
