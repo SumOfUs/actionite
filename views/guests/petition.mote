@@ -41,8 +41,8 @@
           <div class="form-group">
             <label for="id_country" class="col-lg-3 control-label">Country</label>
             <div class="col-lg-6 pull-left">
-              % if signature.errors[:country].include? :not_present
-                <p id="validation-error">Country is required</p>
+              % if signature.errors[:country].include? :not_valid
+                <p id="validation-error">Country is required and must be valid</p>
               % end
               <select name="signature[country]" id="id_country" class="required" autocomplete="off">
                 <option value="">-- Select --</option>

@@ -21,7 +21,7 @@ scope do
 
     assert last_response.body.include?("Email is required and must be valid")
     assert last_response.body.include?("Full name is required")
-    assert last_response.body.include?("Country is required")
+    assert last_response.body.include?("Country is required and must be valid")
     assert last_response.body.include?("Postal/ZIP code is required")
   end
 
@@ -34,7 +34,7 @@ scope do
 
     assert last_response.body.include?("Email is required and must be valid")
     assert !last_response.body.include?("Full name is required")
-    assert !last_response.body.include?("Country is required")
+    assert !last_response.body.include?("Country is required and must be valid")
     assert !last_response.body.include?("Postal/ZIP code is required")
   end
 
@@ -47,7 +47,7 @@ scope do
 
     assert !last_response.body.include?("Email is required and must be valid")
     assert last_response.body.include?("Full name is required")
-    assert !last_response.body.include?("Country is required")
+    assert !last_response.body.include?("Country is required and must be valid")
     assert !last_response.body.include?("Postal/ZIP code is required")
   end
 
@@ -60,7 +60,7 @@ scope do
 
     assert !last_response.body.include?("Email is required and must be valid")
     assert !last_response.body.include?("Full name is required")
-    assert last_response.body.include?("Country is required")
+    assert last_response.body.include?("Country is required and must be valid")
     assert !last_response.body.include?("Postal/ZIP code is required")
   end
 
@@ -73,7 +73,7 @@ scope do
 
     assert !last_response.body.include?("Email is required and must be valid")
     assert !last_response.body.include?("Full name is required")
-    assert !last_response.body.include?("Country is required")
+    assert !last_response.body.include?("Country is required and must be valid")
     assert last_response.body.include?("Postal/ZIP code is required")
   end
 

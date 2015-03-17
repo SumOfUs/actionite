@@ -89,6 +89,7 @@
   font-size: 0.9em;
   color: red;
   font-style: italic;
+  min-width: 250px;
 }
 
 #logo-navbar {
