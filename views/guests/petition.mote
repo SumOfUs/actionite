@@ -23,8 +23,8 @@
           <div class="form-group">
             <label for="input_email" class="col-lg-3 control-label">Email</label>
             <div class="col-lg-9">
-              % if signature.errors[:email].include? :not_present
-                <p id="validation-error">Email is required</p>
+              % if signature.errors[:email].include? :not_email
+                <p id="validation-error">Email is required and must be valid</p>
               % end
               <input name="signature[email]" class="form-control" id="input_email" placeholder="Email" type="text" value="{{signature.email}}">
             </div>

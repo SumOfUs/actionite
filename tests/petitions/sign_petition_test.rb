@@ -19,7 +19,7 @@ scope do
     post "/petition/sign/#{petition.slug}",
       { signature: { email: "", full_name: "", country: "", id_zip: "" } }
 
-    assert last_response.body.include?("Email is required")
+    assert last_response.body.include?("Email is required and must be valid")
     assert last_response.body.include?("Full name is required")
     assert last_response.body.include?("Country is required")
     assert last_response.body.include?("Postal/ZIP code is required")
@@ -32,7 +32,7 @@ scope do
                      country: "United States",
                      id_zip: "10010" } }
 
-    assert last_response.body.include?("Email is required")
+    assert last_response.body.include?("Email is required and must be valid")
     assert !last_response.body.include?("Full name is required")
     assert !last_response.body.include?("Country is required")
     assert !last_response.body.include?("Postal/ZIP code is required")
@@ -45,7 +45,7 @@ scope do
                      country: "United States",
                      id_zip: "10010" } }
 
-    assert !last_response.body.include?("Email is required")
+    assert !last_response.body.include?("Email is required and must be valid")
     assert last_response.body.include?("Full name is required")
     assert !last_response.body.include?("Country is required")
     assert !last_response.body.include?("Postal/ZIP code is required")
@@ -58,7 +58,7 @@ scope do
                      country: "",
                      id_zip: "10010" } }
 
-    assert !last_response.body.include?("Email is required")
+    assert !last_response.body.include?("Email is required and must be valid")
     assert !last_response.body.include?("Full name is required")
     assert last_response.body.include?("Country is required")
     assert !last_response.body.include?("Postal/ZIP code is required")
@@ -71,7 +71,7 @@ scope do
                      country: "United States",
                      id_zip: "" } }
 
-    assert !last_response.body.include?("Email is required")
+    assert !last_response.body.include?("Email is required and must be valid")
     assert !last_response.body.include?("Full name is required")
     assert !last_response.body.include?("Country is required")
     assert last_response.body.include?("Postal/ZIP code is required")
