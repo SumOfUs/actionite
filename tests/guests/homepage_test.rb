@@ -14,7 +14,7 @@ scope do
     assert last_response.body.include?("Make a donation to support Our ongoing work")
   end
 
-  test "go to donation page that doesn't exist" do
+  test "go to page that doesn't exist" do
     get "/wrong_url"
 
     assert last_response.body.include?("That makes me a sad panda")
