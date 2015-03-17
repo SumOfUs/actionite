@@ -1,6 +1,7 @@
 <!-- JQUERY -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="/js/cropper.js"></script>
+<script src="/js/image_cropper.js"></script>
 <link href="/css/cropper.css" rel="stylesheet" media="screen">
 
 <form action="/{{target}}/save" method="post" class="form-horizontal">
@@ -99,12 +100,10 @@
             <div class="col-lg-9" id="image_preview">
                 <img id="image" src="{{petition.image_url}}" class="img-responsive center-block" alt="Enter a campaign image URL!"/>
             </div>
-            <ul> 
-              <li><input id="image_x">X</input></li>
-              <li><input id="image_y">Y</input></li>
-              <li><input id="image_width">Width</input></li>
-              <li><input id="image_height">Height</input></li>
-            </ul>
+              <input id="image_x">x</input>
+              <input id="image_y">y</input>
+              <input id="image_width">width</input>
+              <input id="image_height">height</input>
         </div>
             
         <div class="form-group">
@@ -145,67 +144,3 @@
         % end
     </div>
 </form>
-
-<script>
-    
-    // Creates a function that returns parameters built based on DOM image element size
-    // that get passed to cropper.js for the image crop UI when creating petitions or donations.
-    create_cropper_parameters = function(ratio_width, ratio_height, image_id) {
-        var dom_image = document.getElementById(image_id);
-        //Since we want a fixed ratio. Setting max_width and height on top of the ratio is necessary
-        //because we are using responsive images.
-        var cropper_parameters = {
-            ratio: {
-                width: ratio_width,
-                height: ratio_height
-            },
-            max_height: 0,
-            max_width: 0,
-        }        
-        // Setting max dimensions for the image cropping box. 
-        // If image is wider than it is tall, use its height to constrain crop size.
-        // else, use its width. Without these, it fails on responsive images.
-        if (dom_image.offsetHeight <= dom_image.offsetWidth) {
-            cropper_parameters.max_height = dom_image.offsetHeight;
-            cropper_parameters.max_width = cropper_parameters.max_height/ratio_height*ratio_width;
-        }
-        else {
-            cropper_parameters.max_width = dom_image.offsetWidth;
-            cropper_parameters.max_height = cropper_parameters.max_width/ratio_width*ratio_height;
-        }
-        return cropper_parameters;
-    }
-
-    $(document).ready(function (){
-        $("#image_container").hide();
-        $("#image_url").change(function() {
-            $("#image").attr('src', $(this).val());
-        })
-        $("#image").load(function() {
-            console.log('image loaded')
-            $("#image_container").show();
-
-            var image_cropper_parameters = create_cropper_parameters(14, 10, 'image');
-            image_cropper_parameters.update = function (coordinates) {
-                for (item in coordinates) {
-                    // TODO: Change this with the respective proportion, 
-                    $("#image_x").val()
-                    $("#image_y").val()
-                    $("#image_height").val()
-                    $("#image_width").val()
-
-                    document.getElementById("image_"+ item).value = coordinates[item];
-                }
-            }
-            // Creates a new cropper box on top of the image.
-            // The object is passed as a DOM element with $(this).get(0), 
-            // because the library expects a DOM element instead of a jQuery object.
-            new Cropper($(this).get(0), image_cropper_parameters);
-
-        })
-        $("#image").unload(function() {
-            console.log('unloaded image')
-            $("#image_container").hide()
-        })      
-    }) 
-</script>
