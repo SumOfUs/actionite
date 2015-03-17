@@ -145,7 +145,7 @@ body:before {
 /*STYLING FOR IMAGE CROPPER IN PETITION/DONATION CREATION*/
 #image_preview {
   overflow: hidden;
-  height: 350px;
+  height: 500px;
 }
 
 #image_preview * {
