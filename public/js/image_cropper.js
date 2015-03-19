@@ -29,26 +29,24 @@ create_cropper_parameters = function(ratio_width, ratio_height, image_id) {
 $(document).ready(function (){
     $("#image_container").hide();
     $("#image_url").change(function() {
-        $("#image").attr('src', $(this).val());
-    })
-    $("#image").load(function() {
-        console.log('image loaded')
         $("#image_container").show();
+        $("#image_preview").empty()
+        //append new image to image preview
+        $("#image_preview").append($("<img>", {
+            id: "image", 
+            class: "img-responsive center-block",
+            alt: "Enter a campaign image URL!",
+            src: $("#image_url").val()
+        }))
 
-        var image_cropper_parameters = create_cropper_parameters(14, 10, 'image');
-        image_cropper_parameters.update = function (coordinates) {
-            for (item in coordinates) {
-                document.getElementById("image_"+ item).value = coordinates[item];
+        $("#image").load(function() {
+            image_cropper_parameters = create_cropper_parameters(14, 10, 'image');
+            image_cropper_parameters.update = function (coordinates) {
+                for (item in coordinates) {
+                    document.getElementById("image_"+ item).value = coordinates[item];
+                }
             }
-        }
-        // Creates a new cropper box on top of the image.
-        // The object is passed as a DOM element with $(this).get(0), 
-        // because the library expects a DOM element instead of a jQuery object.
-        new Cropper($(this).get(0), image_cropper_parameters);
-
+            new Cropper($(this).get(0), image_cropper_parameters);
+        })
     })
-    $("#image").unload(function() {
-        console.log('unloaded image')
-        $("#image_container").hide()
-    })      
 })
