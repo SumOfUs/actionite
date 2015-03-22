@@ -1,5 +1,6 @@
 <!-- JQUERY -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<!-- IMAGE CROPPING SCRIPTS -->
 <script src="/js/cropper.js"></script>
 <script src="/js/image_cropper.js"></script>
 <link href="/css/cropper.css" rel="stylesheet" media="screen">
@@ -45,6 +46,7 @@
                 </select>
             </div>
         </div>
+
         <div class="form-group">
             <label for="body" class="col-lg-3 control-label">Page Body:</label>
             <div class="col-lg-9">
@@ -87,7 +89,6 @@
     </fieldset>
     <fieldset>
         <legend><h3>Optional Items</h3></legend>
-
         <div class="form-group">
             <label for="image_url" class="col-lg-3 control-label">Image URL:</label>
             <div class="col-lg-9">
@@ -100,10 +101,10 @@
             <div class="col-lg-9" id="image_preview">
                 <img id="image" src="{{petition.image_url}}" class="img-responsive center-block" alt="Enter a campaign image URL!"/>
             </div>
-              <input id="image_x">x</input>
-              <input id="image_y">y</input>
-              <input id="image_width">width</input>
-              <input id="image_height">height</input>
+              <input type="hidden" name="image_x" id="image_x">
+              <input type="hidden" name="image_y" id="image_y">
+              <input type="hidden" name="image_width" id="image_width">
+              <input type="hidden" name="image_height" id="image_height">
         </div>
             
         <div class="form-group">
