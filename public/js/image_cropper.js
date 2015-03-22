@@ -42,9 +42,21 @@ $(document).ready(function (){
         $("#image").load(function() {
             image_cropper_parameters = create_cropper_parameters(14, 10, 'image');
             image_cropper_parameters.update = function (coordinates) {
-                for (item in coordinates) {
-                    document.getElementById("image_"+ item).value = coordinates[item];
-                }
+                var cropper_width = $(".cropper").width()
+                var cropper_height = $(".cropper").height()
+                console.log(coordinates)
+                $("#image_x").val(coordinates['x']/cropper_width)
+                $("#image_y").val(coordinates['y']/cropper_height)
+                $("#image_width").val(coordinates['width']/cropper_width)
+                $("#image_height").val(coordinates['height']/cropper_height)
+
+                // for (item in coordinates) {
+                //     //set the parameter containers to contain the cropped item's dimensions
+                //     $("#image_"+ item).val(coordinates[item]);
+                // }
+                // //set image width and height parameters to those of the image cropper container
+                // $("#cropper_width").val(cropper_width);
+                // $("#cropper_height").val(cropper_height);
             }
             new Cropper($(this).get(0), image_cropper_parameters);
         })

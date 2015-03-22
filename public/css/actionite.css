@@ -144,10 +144,13 @@ body:before {
 
 /*STYLING FOR IMAGE CROPPER IN PETITION/DONATION CREATION*/
 #image_preview {
-  overflow: hidden;
-  height: 500px;
+  height: 400px;
 }
 
 #image_preview * {
   max-height: 100%;
+}
+
+#image {
+  max-width: 100%;
 }

@@ -62,6 +62,7 @@ var Cropper = function() {
     return s.prototype.wrapImage = function() {
         var e = document.createElement("div");
         e.className = this.options.container_class;
+        // e.id = "cropper";
         var n = this.image.parentNode,
             r = this.image.nextSibling;
         e.appendChild(this.image), this.image.style.padding = this.image.style.margin = this.image.style.border = 0, r ? n.insertBefore(e, r) : n.appendChild(e), this.image.ondragstart = function() {
