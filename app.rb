@@ -1,6 +1,6 @@
 Encoding.default_external = "UTF-8"
 
-require 'actionkit_connector'
+require "actionkit_connector"
 require "cuba"
 require "cuba/contrib"
 require "mote"
@@ -8,6 +8,7 @@ require "rack/protection"
 require "scrivener"
 require "sequel"
 require "shield"
+require "rmagick"
 
 # Grab environment variables from .env file
 APP_SECRET = ENV.fetch("APP_SECRET")
@@ -20,7 +21,6 @@ FACEBOOK_APP_ID = ENV.fetch("FACEBOOK_APP_ID")
 AK_API_USER = ENV.fetch 'AK_API_USERNAME'
 AK_API_PASSWORD = ENV.fetch 'AK_API_PASSWORD'
 AK_API_HOST = ENV.fetch 'AK_API_URL'
-
 
 # Connect to the db
 DB = Sequel.connect(POSTGRES_DB)
