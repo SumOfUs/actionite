@@ -11,6 +11,9 @@ gem 'shield'
 gem 'shotgun'
 gem 'actionkit_connector'
 
+# For image processing
+gem 'rmagick'
+
 # For Testing
 gem 'cutest'
 gem 'sqlite3'
