@@ -41,24 +41,15 @@ class Campaigners < Cuba
     on "petitions/save" do
       on post do
         params = req.POST
-        params = params.clone
-        # important: params['image_x'], params['image_y'], params['width'], params['height']
 
-        require "open-uri"
-        require "RMagick"
+        image = Cropped_image.new(params)
+        image.crop
+        image.resize
+        image.cleanup
 
-        # Open the image at image_url and write its contents into an RMagick image
-        img = Magick::Image.from_blob(open(params['image_url']).read).first
-
-        width = img.columns 
-        height = img.rows
-
-        # crop image according to crop parameters
-        img.crop!(params['image_x'].to_f * width, params['image_y'].to_f * height, params['image_width'].to_f * width, params['image_height'].to_f * height, true)
-        
-        # TODO: resize and compress image, delete rmagick references
-        # figure out a better naming convention than the slug
-        img.write params['slug']
+        # Delete imagemagick reference - this needs to be done to prevent memory leakage
+        image = nil
+        $LOG.debug("image: #{image}")
 
         petition = (Petition.find_by_slug params['slug'] or Petition.new)
         petition.name = params['name']
