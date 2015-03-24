@@ -42,14 +42,13 @@ class Campaigners < Cuba
       on post do
         params = req.POST
 
-        image = Cropped_image.new(params)
+        image = Cropped_image.new(params, "public/img/petitions/"+params['slug'])
         image.crop
         image.resize
         image.cleanup
 
         # Delete imagemagick reference - this needs to be done to prevent memory leakage
         image = nil
-        $LOG.debug("image: #{image}")
 
         petition = (Petition.find_by_slug params['slug'] or Petition.new)
         petition.name = params['name']
@@ -61,6 +60,7 @@ class Campaigners < Cuba
         petition.language = params['language']
         petition.alt_body = params['alt_body']
         petition.image_url = params['image_url']
+        petition.image_path = "/img/petitions/"+params['slug']
         petition.image_text = params['image_text']
         petition.suggested_tweets = params['suggested_tweets']
         petition.goal = params['goal']
@@ -140,7 +140,16 @@ class Campaigners < Cuba
 
     on "donations/save" do
       on post do
+
         params = req.POST
+
+        image = Cropped_image.new(params, "public/img/donations/"+params['slug'])
+        image.crop
+        image.resize
+        image.cleanup
+        # Delete imagemagick reference - this needs to be done to prevent memory leakage
+        image = nil
+
         donation = (Donation.find_by_slug params['slug'] or Donation.new)
         donation.name = params['name']
         donation.title = params['title']
@@ -151,6 +160,7 @@ class Campaigners < Cuba
         donation.language = params['language']
         donation.alt_body = params['alt_body']
         donation.image_url = params['image_url']
+        donation.image_path = "/img/donations/"+params['slug']
         donation.image_text = params['image_text']
         donation.suggested_tweets = params['suggested_tweets']
         donation.goal = params['goal']

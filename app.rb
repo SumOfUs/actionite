@@ -129,8 +129,9 @@ Cuba.define do
 
   # Homepage for members (guests) when going to http://192.168.59.103:5000
   on root do
-    petitions = Petition.order(Sequel.desc(:created_at)).limit(5)
-    donations = Donation.order(Sequel.desc(:created_at)).limit(5)
+    # Changed limit of campaigns and petitions to an even number because they're displayed in pairs
+    petitions = Petition.order(Sequel.desc(:created_at)).limit(4)
+    donations = Donation.order(Sequel.desc(:created_at)).limit(4)
     render("home", title: "SumOfUs", petitions: petitions, donations: donations)
   end
 
