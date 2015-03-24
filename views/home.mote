@@ -23,7 +23,7 @@
         % donations.each do |donation|
             <div class="col-md-6 campaign-box">
                 <div class="row col-md-8 col-s-12">
-                    <img src="{{donation.image_url}}" class="img-responsive full-width">
+                    <img src="{{donation.image_path}}" class="img-responsive full-width">
                     <a href="/donation/{{donation.slug}}" class="btn btn-success btn-lg btn-block btn-sharp">Chip in to help!</a>
                 </div>
                 <div class="row col-md-4 col-s-12 campaign-abstract">
@@ -38,7 +38,7 @@
         % petitions.each do |petition|
             <div class="col-md-6 campaign-box">
                 <div class="row col-md-8 col-s-12">
-                    <img src="{{petition.image_url}}" class="img-responsive full-width">
+                    <img src="{{petition.image_path}}" class="img-responsive full-width">
                     <a href="/petition/{{petition.slug}}" class="btn btn-warning btn-lg btn-block btn-sharp">Take action!</a>
                 </div>
                 <div class="row col-md-4 col-s-12 campaign-abstract">
