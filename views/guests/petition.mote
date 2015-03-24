@@ -8,7 +8,7 @@
   <div class = "row">
 
     <div id = "image_container" class = "col-md-7 col-xs-12">
-      <img src = "{{ petition.image_url }}" class = "img-responsive full-width"></img>
+      <img src = "{{ petition.image_path }}" class = "img-responsive full-width"></img>
       <p><blockquote id = "image_title" class ="pull-right">
         <span class = "glyphicon glyphicon-arrow-up"></span>
         {{ petition.image_text }}</blockquote></p>

@@ -89,6 +89,25 @@
     </fieldset>
     <fieldset>
         <legend><h3>Optional Items</h3></legend>
+        % if petition.id
+        <div class="form-group">
+            <label for="image_url" class="col-lg-3 control-label">Image URL:</label>
+            <div class="col-lg-9">
+                <input type="text" name="image_url" id="image_url" placeholder="{{petition.image_url}}" class="form-control" value="{{petition.image_url}}"/>
+            </div>
+        </div>
+
+        <div id = "image_container">
+            <label for="image_preview" class="col-lg-3 control-label">Image:</label>
+            <div class="col-lg-9" id="image_preview">
+                <img id="image" src="{{petition.image_path}}" class="img-responsive center-block" alt="Enter a campaign image URL!"/>
+            </div>
+              <input type="hidden" name="image_x" id="image_x">
+              <input type="hidden" name="image_y" id="image_y">
+              <input type="hidden" name="image_width" id="image_width">
+              <input type="hidden" name="image_height" id="image_height">
+        </div>
+        % else
         <div class="form-group">
             <label for="image_url" class="col-lg-3 control-label">Image URL:</label>
             <div class="col-lg-9">
@@ -97,16 +116,16 @@
         </div>
 
         <div id = "image_container">
-            <label for="image_preview" class="col-lg-3 control-label">Crop your image:</label>
+            <label for="image_preview" class="col-lg-3 control-label">Click to crop your image:</label>
             <div class="col-lg-9" id="image_preview">
-                <img id="image" src="{{petition.image_url}}" class="img-responsive center-block" alt="Enter a campaign image URL!"/>
+                <img id="image" src="{{petition.image_path}}" class="img-responsive center-block" alt="Enter a campaign image URL!"/>
             </div>
               <input type="hidden" name="image_x" id="image_x">
               <input type="hidden" name="image_y" id="image_y">
               <input type="hidden" name="image_width" id="image_width">
               <input type="hidden" name="image_height" id="image_height">
         </div>
-            
+        % end
         <div class="form-group">
             <label for="image_text" class="col-lg-3 control-label">Image Text:</label>
             <div class="col-lg-9">
@@ -135,13 +154,15 @@
     </fieldset>
 
     <div class="form-group">
-        <input type="submit" value="Create {{page_type}}" class="btn btn-info col-lg-offset-1"/>
         % if petition.id
+            <input type="submit" value="Save edits" class="btn btn-success col-lg-offset-1"/>
             % if petition.disabled
                 <a href="/{{target}}/disable/{{petition.slug}}" class="btn btn-danger pull-right">Disable {{page_type}}</a>
             % else
                 <a href="/{{target}}/disable/{{petition.slug}}" class="btn btn-success pull-right">Enable {{page_type}}</a>
             % end
+        % else
+            <input type="submit" value="Create {{page_type}}" class="btn btn-info col-lg-offset-1"/>
         % end
     </div>
 </form>

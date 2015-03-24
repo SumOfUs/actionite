@@ -9,7 +9,7 @@
 
     <div id = "image_container" class = "col-md-7 col-xs-12">
       <div>
-        <img src = {{ donation.image_url }} class = "img-responsive pull-right full-width"></img>
+        <img src = {{ donation.image_path }} class = "img-responsive pull-right full-width"></img>
         <p><blockquote id = "image_title" class ="pull-right full-width">
           {{donation.image_text}}
         </blockquote></p>
