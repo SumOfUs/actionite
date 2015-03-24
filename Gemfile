@@ -17,3 +17,6 @@ gem 'rmagick'
 # For Testing
 gem 'cutest'
 gem 'sqlite3'
+
+# For Logging
+gem 'logger'

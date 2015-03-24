@@ -8,7 +8,11 @@ require "rack/protection"
 require "scrivener"
 require "sequel"
 require "shield"
-require "rmagick"
+# For logging
+require "logger"
+# Logs into 'application.log', starts new when it reaches 100MB.
+# You use this by calling e.g. $LOG.debug("variable: #{variable}")
+$LOG = Logger.new('application.log', 0, 100 * 1024 * 1024)  
 
 # Grab environment variables from .env file
 APP_SECRET = ENV.fetch("APP_SECRET")
