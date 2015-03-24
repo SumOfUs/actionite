@@ -27,7 +27,7 @@ create_cropper_parameters = function(ratio_width, ratio_height, image_id) {
 }
 
 $(document).ready(function (){
-    $("#image_container").hide();
+    // $("#image_container").hide();
     $("#image_url").change(function() {
         $("#image_container").show();
         $("#image_preview").empty()
