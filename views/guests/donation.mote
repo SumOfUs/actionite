@@ -8,22 +8,22 @@
   <div class = "row">
 
     <div id = "image_container" class = "col-md-7 col-xs-12">
-      <img src = {{ donation.image_url }} class = "img-responsive"></img>
-      <p><blockquote id = "image_title" class ="pull-right">
-        {{donation.image_text}}
-      </blockquote></p>
+      <div>
+        <img src = {{ donation.image_path }} class = "img-responsive pull-right full-width"></img>
+        <p><blockquote id = "image_title" class ="pull-right full-width">
+          {{donation.image_text}}
+        </blockquote></p>
+      </div>
+      <div id="donation_body">
+        {{donation.body}}
+      </div>  
     </div>
 
-    <div id = "donation_box" class = "col-md-5 col-xs-12">
+    <div class = "col-md-5 col-xs-12">
       <blockquote>
         {{donation.blockquote}}
       </blockquote>
       <div class="donations-form-anchor"></div>
     </div>
-  </div>
-
-  <!-- DONATION TEXT  -->
-  <div id="donation_body">
-    {{donation.body}}
   </div>
 </div>

@@ -1,3 +1,7 @@
+html,body{
+    height: 100%
+}
+
 .campaign-abstract {
     margin-left: 5px;
 }
@@ -40,6 +44,7 @@
 
 #petition_body, #donation_body {
   text-align: justify;
+  clear:top;
 }
 
 .donation-next-btn-header,
@@ -97,6 +102,55 @@
   background-color: white;
 }
 
-.btn {
+.btn-sharp {
   border-radius: 0;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/*CSS FOR STICKY FOOTER*/
+
+#wrap {
+  min-height: 100%;
+}
+
+#main {
+  overflow:auto;
+  padding-bottom: 250px;
+  }  /* must be same height as the footer */
+
+#footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  border-top: 2px dashed #AE3910;
+} 
+
+#footer .row {
+  margin-top:40px;
+}
+
+/*Opera Fix*/
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;/
+}
+
+/*STYLING FOR IMAGE CROPPER IN PETITION/DONATION CREATION*/
+#image_preview {
+  height: 400px;
+}
+
+#image_preview * {
+  max-height: 100%;
+}
+
+#image {
+  max-width: 100%;
 }

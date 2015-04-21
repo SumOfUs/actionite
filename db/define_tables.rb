@@ -64,6 +64,7 @@ def create_petitions_table(db)
     # The other details
     Text :alt_body
     String :image_url
+    String :image_path
     String :image_text
     String :required_fields
     String :suggested_tweets
@@ -102,6 +103,7 @@ def create_donations_table(db)
     # The other details
     Text :alt_body
     String :image_url
+    String :image_path
     String :image_text
     String :required_fields
     String :suggested_tweets

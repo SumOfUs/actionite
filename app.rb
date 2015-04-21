@@ -1,6 +1,6 @@
 Encoding.default_external = "UTF-8"
 
-require 'actionkit_connector'
+require "actionkit_connector"
 require "cuba"
 require "cuba/contrib"
 require "mote"
@@ -8,12 +8,18 @@ require "rack/protection"
 require "scrivener"
 require "sequel"
 require "shield"
+# For logging
+require "logger"
+# Logs into 'application.log', starts new when it reaches 100MB.
+# You use this by calling e.g. $LOG.debug("variable: #{variable}")
+$LOG = Logger.new('application.log', 0, 100 * 1024 * 1024)  
 
 # Grab environment variables from .env file
 APP_SECRET = ENV.fetch("APP_SECRET")
 CLIENT_ID = ENV.fetch("CLIENT_ID")
 POSTGRES_DB = ENV.fetch("POSTGRES_DB")
 GOOGLE_FETCH_USER = ENV.fetch("GOOGLE_FETCH_USER")
+FACEBOOK_APP_ID = ENV.fetch("FACEBOOK_APP_ID")
 
 # Need our ActionKit connection data.
 AK_API_USER = ENV.fetch 'AK_API_USERNAME'
@@ -123,8 +129,9 @@ Cuba.define do
 
   # Homepage for members (guests) when going to http://192.168.59.103:5000
   on root do
-    petitions = Petition.order(Sequel.desc(:created_at)).limit(5)
-    donations = Donation.order(Sequel.desc(:created_at)).limit(5)
+    # Changed limit of campaigns and petitions to an even number because they're displayed in pairs
+    petitions = Petition.order(Sequel.desc(:created_at)).limit(4)
+    donations = Donation.order(Sequel.desc(:created_at)).limit(4)
     render("home", title: "SumOfUs", petitions: petitions, donations: donations)
   end
 
