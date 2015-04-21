@@ -1,6 +1,9 @@
 # Actionite
 SumOfUs Experiment with ActionKit in ruby.
 
+## The Actionite experiment was concluded successfully and it is not going to be maintained!
+All future development on a similar (but renamed) project is going to our [Champaign repository](https://github.com/SumOfUs/Champaign/).
+
 ## Installation
 
 * If you're using OS X, install Docker and Boot2Docker together via homebrew: `brew install boot2docker`
